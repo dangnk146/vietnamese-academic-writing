@@ -22,7 +22,7 @@ Trong nghiên cứu khoa học, không có thuật toán hay giải pháp nào l
 - **CẤM TUYỆT ĐỐI**: `nhất`, `tốt nhất`, `hoàn hảo`, `tuyệt đối`, `số 1`, `hàng đầu`, `đột phá nhất`, `vượt trội nhất`, `tối ưu nhất`, `triệt để`.
 - **Thay thế bằng**: Số liệu định lượng cụ thể hoặc nhận định so sánh tương đối có căn cứ:
   - ❌ *"Mô hình đạt độ chính xác cao nhất hiện nay."*
-  - ✅ *"Mô hình đạt độ chính xác $94{,}18\%$, cao hơn so với các phương pháp đối chứng trên cùng tập kiểm thử."*
+  - ✅ *"Mô hình đạt độ chính xác 94,18\%, cao hơn so với các phương pháp đối chứng trên cùng tập kiểm thử."* *(ưu tiên Text Mode `94,18\%` tự nhiên trong câu văn; nếu trong Math Mode mới cần `{,}`)*
   - ❌ *"Đây là hướng tiếp cận hoàn hảo nhất."*
   - ✅ *"Đây là phương pháp tiêu chuẩn mang lại hiệu quả ổn định."*
 - Danh mục chi tiết: **[references/banned-phrases.md](references/banned-phrases.md)**.
@@ -67,13 +67,16 @@ Mỗi đoạn văn là một khối lập luận trọn vẹn (gồm 3–7 câu)
    Quét và loại bỏ tất cả các từ so sánh nhất (*nhất, tốt nhất, hoàn hảo*) và từ ngữ kịch tính hóa (*vô cùng nghiêm trọng, thảm họa*).
 3. **Bước 3 — Chuẩn hóa câu cú, dấu câu và liên từ**:
    Hợp nhất các câu rời rạc thành đoạn văn liền mạch; bổ sung các liên từ học thuật; kiểm tra tính đầy đủ của Chủ ngữ - Vị ngữ.
-4. **Bước 4 — Kiểm định bảng biểu, ký hiệu toán và trích dẫn LaTeX**:
-   Đảm bảo các biến số nằm trong dấu `$k$-fold$`, `$p < 0.05$`, và trích dẫn đúng định dạng `~\cite{key}`.
+4. **Bước 4 — Kiểm định bảng biểu, ký hiệu toán, số liệu và trích dẫn LaTeX**:
+   - Viết tỷ lệ phần trăm văn xuôi ở Text Mode (`84,2\%`), chỉ dùng Math Mode khi đi kèm biến/công thức (`$p < 0{,}05$`, `$73,0 \pm 7,7$`, `$56\times 56$`).
+   - Dùng macro `\acs{KEY}` cho từ viết tắt, `~\cite{key}` cho tài liệu tham khảo và `Hình~\ref{fig:...}`, `Bảng~\ref{tab:...}` có dấu ngã chống ngắt dòng.
+   - Chi tiết: **[references/latex-guide.md](references/latex-guide.md)**.
 
 ---
 
 ## Tài liệu tham khảo chi tiết
 
+- **[references/latex-guide.md](references/latex-guide.md)** — Quy chuẩn soạn thảo LaTeX chuẩn mực cho luận văn và bài báo (số liệu text vs math mode, trích dẫn, từ viết tắt \acs, figure, table, equation).
 - **[references/academic-structure.md](references/academic-structure.md)** — Cấu trúc đoạn văn, kỹ thuật lập luận và bố cục 5 chương luận văn.
 - **[references/banned-phrases.md](references/banned-phrases.md)** — Bảng tra cứu từ cấm (so sánh nhất, kịch tính hóa, ngôi xưng sai).
 - **[references/glossary.md](references/glossary.md)** — Thuật ngữ song ngữ AI, Học sâu, Chẩn đoán hình ảnh y tế và MRI.

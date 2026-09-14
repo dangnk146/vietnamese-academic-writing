@@ -152,8 +152,10 @@ Other checks worth running on `vi.json`: missing keys versus `en.json`, placehol
 ## Academic & LaTeX formatting (Luận văn & Bài báo IEEE/Q1)
 
 Trong văn bản khoa học tiếng Việt và mã nguồn LaTeX:
-- **Số thập phân trong toán học LaTeX**: Để tránh khoảng cách thừa sau dấu phẩy trong môi trường toán của LaTeX, viết `$94{,}18\%$` thay vì `$94,18\%$`, hoặc dùng dấu chấm quốc tế `$94.18\%$` nếu bài báo định dạng chuẩn IEEE tiếng Anh.
-- **Phân cách hàng nghìn**: `$1.225$` mẫu ảnh.
-- **Biến số và công thức**: Luôn bao bọc trong môi trường math (`$...$`): `$k$-fold`, `$p < 0{,}05$`, `$F_1$-score`.
+- **Tỷ lệ phần trăm trong câu văn (Text Mode)**: Viết trực tiếp ở chế độ văn bản, escape dấu `%` thành `\%`: `84,2\%`, `94,18\%`. Không cần đưa vào math mode.
+- **Số thập phân trong Math Mode (`$...$`)**: TeX mặc định coi dấu phẩy `,` là dấu ngắt câu (`\mathpunct`) và tự động thêm một khoảng cách nhỏ sau nó, khiến `$84,2\%$` bị hiển thị tách rời thành `84, 2%`. Để triệt tiêu khoảng trắng thừa này trong Math Mode, bọc dấu phẩy bằng ngoặc nhọn `{,}`: ví dụ `$p < 0{,}05$`, `$3{,}841$`, `$84{,}2\%$`. Nếu bài báo tiếng Anh chuẩn IEEE thì dùng dấu chấm thập phân quốc tế `$94.18\%$`.
+- **Phân cách hàng nghìn**: `$1.225$`, `$1.717$`, `$6.820$` mẫu ảnh (dấu chấm).
+- **Biến số và công thức**: Luôn bao bọc trong môi trường math (`$...$`): `$k$-fold`, `$p < 0{,}05$`, `$F_1$-score`, `$73,0 \pm 7,7$`.
 - **Trích dẫn tài liệu tham khảo**: Luôn dùng dấu ngã chống ngắt dòng `~\cite{key}` gắn liền sau tên tác giả hoặc nội dung tham khảo trước dấu chấm câu: `Ali và cộng sự~\cite{ali2025deep}`.
-- **Dẫn chiếu hình ảnh & bảng biểu**: Viết hoa danh từ riêng nếu có số thứ tự: `Bảng~\ref{tab:...}`, `hình~\ref{fig:...}`, `Phương trình~(\ref{eq:...})`.
+- **Dẫn chiếu hình ảnh & bảng biểu**: Viết hoa danh từ riêng nếu có số thứ tự, có dấu ngã chống ngắt dòng: `Bảng~\ref{tab:...}`, `Hình~\ref{fig:...}`, `công thức~(\ref{eq:...})`.
+- **Hướng dẫn chi tiết toàn diện**: Xem **[references/latex-guide.md](latex-guide.md)**.

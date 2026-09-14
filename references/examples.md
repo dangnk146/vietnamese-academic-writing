@@ -11,9 +11,9 @@ Tài liệu này tổng hợp các cặp ví dụ đối chiếu giữa cách vi
 > Mô hình đề xuất HTFV-Mamba2Attention đạt kết quả tốt nhất hiện nay trên bộ dữ liệu ADNI, hoàn toàn vượt trội so với các nghiên cứu trước đó với độ chính xác tuyệt đối 99%.
 
 ✅ **Đúng:**
-> Mô hình đề xuất HTFV-Mamba2Attention đạt độ chính xác $94{,}18\%$, cải thiện đáng kể so với các kiến trúc tích chập truyền thống trên cùng điều kiện phân chia dữ liệu độc lập ở cấp độ bệnh nhân.
+> Mô hình đề xuất HTFV-Mamba2Attention đạt độ chính xác 94,18\%, cải thiện đáng kể so với các kiến trúc tích chập truyền thống trên cùng điều kiện phân chia dữ liệu độc lập ở cấp độ bệnh nhân.
 
-*Giải thích lỗi:* Từ "tốt nhất hiện nay", "hoàn toàn vượt trội", "độ chính xác tuyệt đối" vi phạm tính khiêm tốn khoa học. Trong nghiên cứu y tế, $99\%$ thường là độ chính xác ảo do rò rỉ dữ liệu. Cần nêu số liệu thực tế có kiểm soát và so sánh công bằng.
+*Giải thích lỗi:* Từ "tốt nhất hiện nay", "hoàn toàn vượt trội", "độ chính xác tuyệt đối" vi phạm tính khiêm tốn khoa học. Trong nghiên cứu y tế, 99\% thường là độ chính xác ảo do rò rỉ dữ liệu. Cần nêu số liệu thực tế có kiểm soát và so sánh công bằng.
 
 ---
 
