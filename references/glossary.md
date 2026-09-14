@@ -28,7 +28,10 @@ Từ điển chuẩn hóa thuật ngữ khoa học dành cho viết Luận văn 
 | Generalization Capability | Khả năng tổng quát hóa | Chuẩn mực. |
 | Transfer Learning | Học chuyển giao | Chuẩn mực. |
 | Data Augmentation | Tăng cường dữ liệu | Chuẩn mực. |
-| Epoch / Batch size / Checkpoint | Epoch / Kích thước batch / Checkpoint | Giữ nguyên các thuật ngữ huấn luyện chuẩn này. |
+| Epoch / Batch size / Checkpoint | Epoch / Kích thước batch / Checkpoint | Giữ nguyên các thuật ngữ huấn luyện chuẩn này; cấm dịch `epoch` thành "chu kỳ". |
+| Cosine Annealing Schedule | Giảm dần theo hàm cosin | Chiến lược điều chỉnh tốc độ học; cấm dịch thô *"lịch trình suy giảm hàm cosin"*. |
+| Warmup | Khởi động / Bước khởi động nhẹ | Giai đoạn tăng nhẹ tốc độ học ở các epoch đầu; cấm dịch *"khởi động tuyến tính"*. |
+| Mamba2 | Mamba2 | Tên mô hình; không viết `Mamba-2` hay thêm tiền tố rườm rà *"không gian trạng thái"*. |
 | Benchmark | Điểm chuẩn đối sánh / Tập chuẩn | Chuẩn mực. |
 | Baseline | Đường cơ sở / Mô hình đối chứng | Dùng *"mô hình đối chứng"* hoặc *"phương pháp cơ sở"*. |
 | Ablation Study | Thực nghiệm cô lập thành phần / Nghiên cứu bóc tách | Chuẩn luận văn: *"thực nghiệm cô lập thành phần"*. |
@@ -57,6 +60,13 @@ Từ điển chuẩn hóa thuật ngữ khoa học dành cho viết Luận văn 
 | Ventricular Enlargement | Sự giãn rộng não thất | Dấu hiệu hình thái học kèm teo não. |
 | DICOM / NIfTI | DICOM / NIfTI | Định dạng tệp ảnh y tế tiêu chuẩn. |
 | Multi-view / Multi-planar | Đa góc nhìn / Đa mặt phẳng giải phẫu | Chuẩn mực. |
+| Tissue Segmentation | Phân đoạn mô não | Chuẩn mực: phân đoạn 3 loại mô chính. |
+| GM Probability Map | Ảnh phân đoạn mô chất xám | Chuẩn xử lý ảnh; tránh calque *"bản đồ xác suất chất xám"*. |
+| GM Slices | Lát cắt mô chất xám / Ảnh lát cắt chất xám | Chuẩn xử lý ảnh; tránh calque *"lát cắt xác suất chất xám"*. |
+| Bilinear Interpolation | Nội suy song tuyến tính | Dùng trong xử lý ảnh 2D. |
+| Trilinear Interpolation | Nội suy tuyến tính ba chiều | Dùng trong xử lý khối thể tích 3D; cấm dịch *"nội suy tam tuyến"*. |
+| Isotropic Voxel / Resolution | Kích thước voxel đồng nhất / Độ phân giải đồng nhất | Chuẩn xử lý ảnh 3D ($1\times 1\times 1$\,mm); cấm dịch *"đẳng hướng"*. |
+| 2D Gaussian Filter | Bộ lọc Gauss 2D | Chuẩn xử lý ảnh; tránh dịch thô *"bộ lọc Gauss hai chiều"*. |
 
 ---
 
@@ -121,3 +131,8 @@ Từ điển chuẩn hóa thuật ngữ khoa học dành cho viết Luận văn 
 | is designed by | `được thiết kế bởi` | `do tác giả thiết kế` | Tránh bị động rườm rà |
 | in an effective manner | `trong một cách thức hiệu quả` | `một cách hiệu quả` | Dịch thô tiếng Anh |
 | play an important role | `đóng một vai trò quan trọng` | `đóng vai trò quan trọng` | Bỏ chữ "một" thừa |
+| GM probability map | `bản đồ xác suất chất xám` | `ảnh phân đoạn mô chất xám` | Calque dịch máy thô thiển |
+| GM slices | `lát cắt xác suất chất xám` | `lát cắt mô chất xám / ảnh lát cắt chất xám` | Calque dịch máy vô nghĩa |
+| trilinear interpolation | `nội suy tam tuyến` | `nội suy tuyến tính ba chiều` | Calque từ vựng kỳ dị, sai ngữ cảnh |
+| isotropic resolution / voxel | `độ phân giải đẳng hướng` | `kích thước voxel đồng nhất / độ phân giải đồng nhất` | "Đẳng hướng" là thuật ngữ vật lý (hướng truyền), sai bản chất kích thước hình học 3D |
+| 2D Gaussian filter | `bộ lọc Gauss hai chiều` | `bộ lọc Gauss 2D` | Tránh dịch thô "hai chiều" gây nhầm lẫn với cơ chế quét 2 chiều thuận-nghịch |
