@@ -11,7 +11,7 @@ metadata:
 
 # Academic Research, Translation (EN <-> VI) and Graduate Thesis Writing (IEEE, Q1, Luận văn Thạc sĩ/Tiến sĩ)
 
-Bộ kỹ năng (Skill) chuẩn hóa toàn diện quy trình **viết mới, dịch thuật song chiều (`VI -> EN` và `EN -> VI`), hiệu đính và khử mùi AI ("Avoid AI Writing")** cho các công trình nghiên cứu khoa học đỉnh cao:
+Bộ kỹ năng (Skill) chuẩn hóa toàn diện quy trình **viết mới, dịch thuật song chiều (`VI -> EN` và `EN -> VI`), hiệu đính, phát hiện và sửa AI writing ("Avoid AI Writing")** cho các công trình nghiên cứu khoa học đỉnh cao:
 - **Bài báo Khoa học Quốc tế**: IEEE Conferences/Transactions, ACM, Springer, Elsevier ISI/Scopus Q1, Khảo sát hệ thống chuẩn PRISMA.
 - **Luận văn Thạc sĩ & Luận án Tiến sĩ**: Đa ngành CNTT, Khoa học dữ liệu, AI, Xử lý ảnh Y sinh, An toàn thông tin & Điều tra số.
 
@@ -165,16 +165,19 @@ Trước khi dịch hoặc viết một bài báo/chương luận văn, bắt bu
 - **Lặp lại từ khóa chính một cách tự nhiên xuyên suốt bài**: Trong văn học cần tránh lặp từ, nhưng trong văn bản khoa học **phải lặp lại đúng từ khóa chính** từ Tóm tắt $\rightarrow$ Mở đầu $\rightarrow$ Phương pháp $\rightarrow$ Thực nghiệm $\rightarrow$ Kết luận. Tuyệt đối không tự ý đổi sang các từ đồng nghĩa lạ làm lệch nghĩa chuyên môn.
 - Chi tiết cách lập plan từ khóa: **[references/translation-and-keyword-plan.md](references/translation-and-keyword-plan.md)**.
 
-### 9. Nguyên tắc "Viết và Dịch như Người Thật — Khử Mùi AI Writing" (Anti-AI Writing Song Ngữ)
-Mục tiêu tối thượng là văn bản đọc lên tự nhiên như người viết, vượt qua các công cụ quét AI (Grammarly AI Detector, Turnitin, GPTZero):
+### 9. Nguyên tắc "Mực thước Khoa học — Phát hiện và Sửa AI Writing & Loại trừ Từ ngữ Suồng sã" (Anti-AI Writing & Academic Formality)
+Mục tiêu là văn bản đạt chuẩn mực khoa học quốc tế, phát hiện và sửa toàn diện các dấu hiệu AI writing, vượt qua các công cụ quét AI (Grammarly AI Detector, Turnitin, GPTZero) và tuyệt đối không dùng từ ngữ suồng sã:
 - **BẢO TOÀN CÂU ĐÃ CHUẨN (Surgical Editing)**: Giữ nguyên cấu trúc và nhịp câu tự nhiên của tác giả; chỉ sửa đúng từ bị lỗi hoặc các câu mang cấu trúc máy móc của AI.
+- **LOẠI BỎ TRIỆT ĐỂ TỪ NGỮ SUỒNG SÃ, SỖ SÀNG, KHẨU NGỮ ĐỜI THƯỜNG (`ACAD013`)**:
+  - Tuyệt đối cấm các từ suồng sã, thiếu mực thước: `khử mùi`, `bóc phốt`, `chém gió`, `phán bừa`, `ngon ăn`, `dễ ợt`, `ăn đứt`, `đè bẹp`, `bó tay`, `chịu chết`, `vọc vạch`, `xịn sò`, `nói trắng ra`, `thẳng thắn mà nói`.
+  - Thay bằng văn phong học thuật mực thước: *"phát hiện và sửa AI writing"*, *"phát hiện sai lệch"*, *"nhận định thiếu căn cứ thực nghiệm"*, *"đạt hiệu năng vượt trội có ý nghĩa thống kê"*.
 - **TRIỆT PHÁ 5 DẤU HIỆU CẤU TRÚC AI**:
   1. *Cắt bỏ câu mở đầu giảng đạo lý + Phủ định kép*.
   2. *Giải tán việc kết thúc mọi câu bằng cặp đối xứng `X and/or Y` hoặc bộ 3 tính từ*.
   3. *Loại bỏ câu thú nhận thiếu thông tin kiểu Chatbot*.
   4. *Cấm các từ vựng làm màu của AI (Tier 1A/1B và Tier 2 cluster)*.
   5. *Đan xen câu ngắn (7–9 từ) và câu dài (30–40 từ) để tạo độ biến thiên chiều dài câu cao ($CV \ge 0.45$)*.
-- Chi tiết: **[references/avoid-ai-patterns.md](references/avoid-ai-patterns.md)**.
+- Chi tiết: **[references/avoid-ai-patterns.md](references/avoid-ai-patterns.md)** và **[references/patterns.md](references/patterns.md)**.
 
 ---
 

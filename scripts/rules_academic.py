@@ -27,6 +27,7 @@ RULE_DOCS = {
     "ACAD010": "high binomial/tricolon coordination density (≥60% of sentences in paragraph contain “X and/or Y” pairs or 3-item triads — triggers Grammarly 100% AI detector)",
     "ACAD011": "low sentence-length burstiness (CV < 0.35 across ≥4 sentences) or low function-word trigram entropy (<0.82) — flat AI sentence rhythm",
     "ACAD012": "Vietnamese AI structural template or buzzword filler (“một cách toàn diện và sâu sắc”, “bức tranh toàn cảnh”, “không đơn thuần là X mà còn Y”)",
+    "ACAD013": "coarse, flippant, or overly casual colloquialisms in academic writing (“khử mùi”, “suồng sã”, “sỗ sàng”, “chém gió”, “bóc phốt”, “ngon ăn”, “ăn đứt”)",
     "EDU001": "abolished secondary (THCS/THPT) overall grading term (Thông tư 22/2021)",
     "EDU002": "“bạn” addressing a student in a teacher's voice",
     "EDU003": "“cần cải thiện” on a primary report card instead of “cần cố gắng” (Thông tư 27/2020)",
@@ -80,6 +81,21 @@ VI_AI_STRUCTURE_RE = re.compile(
     r"|khai\s+phá\s+tiềm\s+năng|chìa\s+khóa\s+then\s+chốt"
     r"|không\s+(?:chỉ|đơn\s+thuần)\s+(?:dừng\s+lại\s+ở\s+)?(?:\w+\s+){1,6}mà\s+còn\b"
     r"|đáng\s+chú\s+ý\s+là\s*,)(?!\w)",
+    re.IGNORECASE,
+)
+
+# Coarse, flippant, or overly casual colloquialisms in academic writing (ACAD013)
+VI_COARSE_RE = re.compile(
+    r"(?<!\w)(?:khử\s+mùi(?:\s+ai)?|bóc\s+phốt|chém\s+gió|phán\s+bừa|ngon\s+ăn|dễ\s+ợt"
+    r"|ăn\s+đứt|đè\s+bẹp|bó\s+tay|chịu\s+chết|vọc\s+vạch|táy\s+máy|xịn\s+sò|bá\s+đạo"
+    r"|toang|vãi|ảo\s+ma|nói\s+trắng\s+ra|thẳng\s+thắn\s+mà\s+nói|chả\s+có(?:\s+gì)?"
+    r"|hết\s+nước\s+chấm|gánh\s+team|bắt\s+bài|lầy\s+lội|làm\s+mưa\s+làm\s+gió|sỗ\s+sàng|suồng\s+sã)(?!\w)",
+    re.IGNORECASE,
+)
+
+EN_COARSE_RE = re.compile(
+    r"(?<!\w)(?:crap|sucks|bullshit|screw\s+up|pissed(?:\s+off)?|freaking|dumb|lame"
+    r"|no-brainer|kinda|sorta|gonna|wanna|bunch\s+of|mess\s+around|badass|half-assed)(?!\w)",
     re.IGNORECASE,
 )
 
@@ -229,6 +245,12 @@ def check_line(ctx, lineno, raw, masked):
                    f"Vietnamese AI structural template or buzzword filler “{match.group(0)}”",
                    "remove empty AI buzzwords/templates; state concrete quantitative facts directly")
 
+        for match in VI_COARSE_RE.finditer(masked):
+            yield ("ACAD013", ERROR, match.start() + 1, match.group(0),
+                   f"từ ngữ suồng sã, sỗ sàng hoặc khẩu ngữ bình dân “{match.group(0)}”",
+                   "văn phong học thuật quốc tế và luận văn đòi hỏi tính mực thước, trang trọng — "
+                   "thay bằng thuật ngữ khoa học tương ứng (ví dụ: “phát hiện và sửa AI writing”, “khảo sát thực nghiệm”, “vượt trội về định lượng”)")
+
         for match in ACADEMIC_PRONOUNS_RE.finditer(masked):
             yield ("ACAD003", ERROR, match.start() + 1, match.group(0),
                    f"informal or personal pronoun “{match.group(0)}”",
@@ -250,6 +272,11 @@ def check_line(ctx, lineno, raw, masked):
             yield ("ACAD007", ERROR, match.start() + 1, match.group(0),
                    f"informal English contraction or idiom “{match.group(0)}”",
                    "replace conversational phrasing with plain academic English (e.g., “is not”, “manually”, “examine”, “extract”)")
+
+        for match in EN_COARSE_RE.finditer(masked):
+            yield ("ACAD013", ERROR, match.start() + 1, match.group(0),
+                   f"coarse, flippant, or slang colloquialism “{match.group(0)}”",
+                   "replace coarse or flippant colloquialisms with precise, formal academic vocabulary")
 
         for match in EN_AI_TIER1_RE.finditer(masked):
             yield ("ACAD008", WARN, match.start() + 1, match.group(0),

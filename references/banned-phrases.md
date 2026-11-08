@@ -156,3 +156,26 @@ Trong paper IEEE/Q1 và luận văn Thạc sĩ/Tiến sĩ, mô hình học sâu 
 | `Bộ mã hóa được tổ chức tuần tự qua các tầng...` / `tinh chỉnh tuần tự` (trong mạng thị giác) | Nhầm lẫn thuật ngữ deep learning: "tuần tự" (sequential) chỉ quy trình RNN / LSTM / chuỗi thời gian, không mô tả mạng thị giác phân tầng | Với mạng thị giác phân tầng, dùng: `kiến trúc phân cấp đa giai đoạn`, `tiếp nối`, `chuỗi khối tiếp nối`. Chỉ giữ từ `tuần tự` khi nói về dữ liệu chuỗi / mạng LSTM. |
 | `Các thông số kỹ thuật của mô hình bao gồm:` | Nhầm lẫn giữa đặc tả kiến trúc học sâu và thông số thiết bị | *"Mô hình thiết lập cấu trúc phân cấp đa tầng với các khối chức năng chuyên biệt:"* |
 | Lạm dụng `\begin{itemize}` để liệt kê từng tầng mạng (`Stem`, `Giai đoạn 1`, `Giai đoạn 2`...) | Cắt vụn dòng chảy văn bản, thiếu tính liên kết ngữ nghĩa của luồng tensor toán học | Trình bày thành các đoạn văn học thuật liền mạch (prose); phân tích rõ cơ chế xử lý luồng tensor, hàm kích hoạt và cơ sở toán học/thiết kế của từng khối. |
+
+---
+
+## 10. Từ ngữ suồng sã, sỗ sàng và khẩu ngữ đời thường (Coarse, Vulgar, and Overly Casual Language — ACAD013)
+
+Văn phong học thuật quốc tế (IEEE/Q1) và luận văn Thạc sĩ/Tiến sĩ đòi hỏi tính mực thước, trang trọng và nghiêm cẩn tuyệt đối. Cấm tuyệt đối việc sử dụng các từ ngữ mang tính suồng sã, sỗ sàng, tiếng lóng mạng xã hội hoặc khẩu ngữ chợ búa trong bài viết, dịch thuật và tài liệu kỹ thuật:
+
+<!-- machine-readable: coarse-words -->
+
+| Từ ngữ suồng sã, sỗ sàng (❌) | Lý do loại bỏ (ACAD013) | Cách diễn đạt học thuật chuẩn mực thay thế (✅) |
+|---|---|---|
+| `khử mùi AI` | Dùng từ "khử mùi" mang sắc thái suồng sã, thiếu chuẩn mực học thuật | `phát hiện và sửa AI writing` / `nhận diện và hiệu đính văn phong AI` / `chuẩn hóa văn phong học thuật` |
+| `bóc phốt` / `vạch mặt` | Tiếng lóng mạng xã hội kích động, phi khoa học | `chỉ ra hạn chế phương pháp luận` / `phát hiện sai lệch thực nghiệm` |
+| `chém gió` / `phán bừa` | Khẩu ngữ đời thường miệt thị | `nhận định thiếu cơ sở thực nghiệm` / `giả định chưa được kiểm chứng` |
+| `ngon ăn` / `dễ ợt` | Khẩu ngữ suồng sã trong đánh giá bài toán | `có tính khả thi cao` / `chi phí tính toán thấp` / `thuận lợi khi triển khai` |
+| `ăn đứt` / `đè bẹp` | Giọng điệu hiếu thắng, thiếu khiêm tốn khoa học | `đạt hiệu năng vượt trội có ý nghĩa thống kê` / `cải thiện rõ rệt so với đường cơ sở` |
+| `vọc vạch` / `táy máy` | Khẩu ngữ thiếu tính phương pháp luận | `tiến hành thực nghiệm thăm dò` / `tinh chỉnh tham số thực nghiệm` |
+| `bó tay` / `chịu chết` | Ngôn ngữ buông xuôi, bình dân | `chưa có giải pháp khả thi` / `là bài toán mở đầy thách thức` |
+| `xịn sò` / `bá đạo` | Tiếng lóng khen ngợi thiếu định lượng | `tiên tiến` / `đạt hiệu suất cao` / `mạnh mẽ về mặt tính toán` |
+| `nói trắng ra` / `thẳng thắn mà nói` | Lối nói khẩu ngữ thanh minh kiểu chatbot | `phân tích khách quan cho thấy` / `kết quả thực nghiệm chỉ ra` |
+| `bắt bài` / `đi guốc trong bụng` | Khẩu ngữ suy đoán tâm lý | `mô hình hóa hành vi` / `dự đoán mẫu quy luật` |
+| `hết nước chấm` / `toẹt vời` | Tiếng lóng cảm thán quá đà | `đạt kết quả tối ưu theo các tiêu chí đo lường` |
+| `gánh team` / `cân tất` | Tiếng lóng trò chơi điện tử | `đóng vai trò chủ đạo trong việc trích xuất đặc trưng` |

@@ -2,7 +2,7 @@
 
 # Vietnamese & International Academic Writing Skill (`vietnamese-academic-writing` v5.0)
 
-Bộ kỹ năng (Skill) chuẩn hóa toàn diện việc **viết mới, dịch thuật song chiều (`VI -> EN` và `EN -> VI`), hiệu đính và khử mùi AI ("Avoid AI Writing")** cho **Bài báo Khoa học Quốc tế (IEEE, ACM, Springer, Elsevier ISI/Scopus Q1, PRISMA Systematic Review)** và **Luận văn Thạc sĩ / Luận án Tiến sĩ**.
+Bộ kỹ năng (Skill) chuẩn hóa toàn diện việc **viết mới, dịch thuật song chiều (`VI -> EN` và `EN -> VI`), hiệu đính, phát hiện và sửa AI writing ("Avoid AI Writing")** cho **Bài báo Khoa học Quốc tế (IEEE, ACM, Springer, Elsevier ISI/Scopus Q1, PRISMA Systematic Review)** và **Luận văn Thạc sĩ / Luận án Tiến sĩ**.
 
 Tích hợp kiến trúc chế độ thực thi, quy trình 2-Pass tự động và bộ lọc cấu trúc câu từ dự án [`conorbronsdon/avoid-ai-writing`](https://github.com/conorbronsdon/avoid-ai-writing) nhằm vượt qua các công cụ quét AI (Grammarly AI Detector, Turnitin, GPTZero).
 
@@ -13,7 +13,7 @@ Tích hợp kiến trúc chế độ thực thi, quy trình 2-Pass tự động 
 1. **5 Chế độ Thực thi Chuyên biệt (Dedicated Execution Modes)**:
    - **`vi-to-en`**: Dịch từ tiếng Việt sang tiếng Anh học thuật chuẩn IEEE/Q1 + tự động khử sạch khung câu AI.
    - **`en-to-vi`**: Dịch từ tiếng Anh sang tiếng Việt chuẩn luận văn/bài báo trong nước, neo từ khóa chính xuyên suốt, khử bị động dịch máy và từ đệm AI tiếng Việt.
-   - **`rewrite`**: Viết lại và nâng cấp một đoạn văn để khử triệt để mùi AI, xuất kết quả hoàn chỉnh duy nhất trong một lần (**Final rewrite**).
+   - **`rewrite`**: Viết lại và nâng cấp một đoạn văn để chuẩn hóa và loại bỏ hoàn toàn các dấu hiệu AI writing, xuất kết quả hoàn chỉnh duy nhất trong một lần (**Final rewrite**).
    - **`edit`**: Chỉnh sửa trực tiếp tại chỗ trên tệp (`paper/main.tex`, `chapter1.tex`), **bảo toàn 100% các đoạn đã chuẩn của người viết thật (Surgical Editing)**.
    - **`detect`**: Rà soát và chỉ ra các vị trí bị dính cấu trúc AI theo các mức độ `P0`, `P1`, `P2`.
 2. **Quy trình Hội tụ Tự động 2 Bước (2-Pass Convergence Pipeline)**:
@@ -63,16 +63,16 @@ vietnamese-academic-writing/
 Bạn có thể kích hoạt skill bằng các câu lệnh tự nhiên rất ngắn gọn:
 
 ### Kịch bản 1: Viết lại từ Tiếng Việt sang Tiếng Anh (`vi-to-en`)
-> *"Dùng skill `vietnamese-academic-writing`, hãy viết lại đoạn tiếng Việt này sang tiếng Anh chuẩn IEEE, đảm bảo khử mùi AI (Avoid AI Writing) và không bị Grammarly bắt lỗi."*
+> *"Dùng skill `vietnamese-academic-writing`, hãy viết lại đoạn tiếng Việt này sang tiếng Anh chuẩn IEEE, đảm bảo phát hiện và sửa AI writing (Avoid AI Writing) và không bị Grammarly bắt lỗi."*
 
 ### Kịch bản 2: Dịch bài báo Tiếng Anh sang Tiếng Việt (`en-to-vi`)
 > *"Dùng skill `vietnamese-academic-writing`, neo từ khóa chính và dịch mục Methodology trong bài báo này sang tiếng Việt cho luận văn Thạc sĩ."*
 
 ### Kịch bản 3: Sửa trực tiếp file LaTeX (`edit`)
-> *"Dùng skill `vietnamese-academic-writing`, sửa trực tiếp file `paper/main.tex` tại mục Discussion và Ethical Considerations để loại bỏ toàn bộ các câu dính văn nói và cấu trúc AI."*
+> *"Dùng skill `vietnamese-academic-writing`, sửa trực tiếp file `paper/main.tex` tại mục Discussion và Ethical Considerations để loại bỏ toàn bộ các câu dính văn nói, từ ngữ suồng sã và cấu trúc AI."*
 
 ### Kịch bản 4: Kiểm tra quét lỗi AI (`detect`)
-> *"Dùng skill `vietnamese-academic-writing`, audit đoạn văn này xem có dính mẫu câu nào của AI hay không (chế độ detect, không sửa)."*
+> *"Dùng skill `vietnamese-academic-writing`, audit đoạn văn này xem có dính mẫu câu nào của AI hay từ ngữ suồng sã hay không (chế độ detect, không sửa)."*
 
 ---
 
@@ -97,6 +97,7 @@ python vietnamese-academic-writing/scripts/validate_copy.py duong_dan/file.tex -
 | `ACAD010` | Khử AI (EN) | Mật độ xếp chồng cặp ghép `X and/or Y` $\ge 75\%$ số câu trong đoạn (nguyên nhân Grammarly báo 100% AI) |
 | `ACAD011` | Khử AI (Song ngữ) | Chiều dài câu phẳng lì thiếu biến thiên ($CV < 0.28$ trên đoạn $\ge 4$ câu) |
 | `ACAD012` | Khử AI (VI) | Cụm từ đệm & Khung cấu trúc AI tiếng Việt (*"một cách toàn diện và sâu sắc"*, *"bức tranh toàn cảnh"*) |
+| `ACAD013` | Lỗi học thuật | Từ ngữ suồng sã, sỗ sàng hoặc khẩu ngữ bình dân (“khử mùi”, “chém gió”, “bóc phốt”, “ngon ăn”, “ăn đứt”) |
 
 ---
 
