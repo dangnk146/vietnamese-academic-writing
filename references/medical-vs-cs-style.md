@@ -1,6 +1,8 @@
-# Hướng dẫn Phong cách Viết Bài báo Y khoa vs Máy tính & Chiến lược Công bố Q1 Y tế
+<!-- vlc-disable: ALL -->
 
-Tài liệu này phân tích sự khác biệt cốt lõi giữa phong cách viết bài báo của chuyên ngành Khoa học Máy tính / Trí tuệ Nhân tạo (CS/AI) và Y khoa (Medical/Clinical), đồng thời cung cấp chiến lược dịch chuyển và khung sườn bài báo chuẩn mực (IMRAD) để các kỹ sư AI có thể công bố thành công trên các tạp chí y tế ISI/Scopus Q1 danh giá.
+# Hướng dẫn Phong cách Viết Bài báo Y khoa vs Máy tính & Bài báo Tổng quan Hệ thống (PRISMA)
+
+Tài liệu này phân tích sự khác biệt cốt lõi giữa phong cách viết bài báo của chuyên ngành Khoa học Máy tính / Trí tuệ Nhân tạo (CS/AI), Bài báo Tổng quan Hệ thống (PRISMA Survey) và Y khoa (Medical/Clinical), đồng thời cung cấp chiến lược dịch chuyển và khung sườn bài báo chuẩn mực (IMRAD) để công bố trên các tạp chí ISI/Scopus Q1.
 
 ---
 
@@ -16,20 +18,20 @@ Tài liệu này phân tích sự khác biệt cốt lõi giữa phong cách vi�
 
 ---
 
-## 2. Vì sao Dùng Mô hình Có sẵn (ResNet, U-Net, Mamba) vẫn Đăng được Q1 Y khoa?
+## 2. Vì sao Dùng Mô hình Có sẵn (ResNet, U-Net, BERT, CNN-LSTM, Mamba) vẫn Đăng được Q1?
 
-Trong giới học thuật Y khoa và Y sinh (ví dụ: *Lancet Digital Health, Nature Medicine, Radiology, Medical Image Analysis, IEEE Transactions on Medical Imaging*), ban biên tập không yêu cầu tác giả phải phát minh ra một kiến trúc mạng nơ-ron hoàn toàn mới. Một nghiên cứu sử dụng các kiến trúc nền tảng nhưng vẫn được chấp nhận xuất bản ở phân hạng Q1 đỉnh cao nhờ 4 yếu tố then chốt:
+Trong giới học thuật Y khoa, Khoa học Xã hội/Pháp y và Liên ngành (ví dụ: *Lancet Digital Health, Nature Medicine, Medical Image Analysis, IEEE Transactions on Medical Imaging, Child Abuse & Neglect, Digital Investigation*), ban biên tập không yêu cầu tác giả phải phát minh ra một kiến trúc mạng nơ-ron hoàn toàn mới. Một nghiên cứu sử dụng các kiến trúc nền tảng hoặc mô hình lai thích nghi nhưng vẫn được chấp nhận xuất bản ở phân hạng Q1 nhờ 4 yếu tố:
 
-1. **Dữ liệu Độc quyền & Chuẩn vàng (Gold Standard)**:
-   - Sở hữu tập dữ liệu lâm sàng chất lượng cao, kích thước lớn, thu thập từ nhiều bệnh viện/trung tâm y tế (Multi-center).
-   - Có tiêu chuẩn vàng xác thực chẩn đoán: kết quả sinh thiết, giải phẫu bệnh học (histopathology), hoặc kết luận đồng thuận của hội đồng chuyên gia đầu ngành.
-2. **Thiết kế Nghiên cứu Chuẩn mực Y học (Standardized Guidelines)**:
-   - Tuân thủ nghiêm ngặt các hướng dẫn báo cáo quốc tế: **STARD** (cho nghiên cứu độ chính xác chẩn đoán), **TRIPOD** (cho mô hình tiên lượng/dự đoán), **CONSORT-AI** (cho thử nghiệm lâm sàng có can thiệp AI), hoặc **PRISMA** (cho tổng quan hệ thống).
-   - Kèm phân tích thống kê chặt chẽ: kiểm định ý nghĩa thống kê ($p < 0{,}05$), kiểm định DeLong cho AUC, McNemar, khoảng tin cậy 95\% \acs{CI}.
-3. **Chứng minh Tính hữu dụng Lâm sàng (Clinical Utility)**:
-   - Nghiên cứu không dừng lại ở con số độ chính xác trên tập kiểm thử mà giải quyết bài toán: *"Khi bác sĩ sử dụng AI làm công cụ tham vấn (AI-assisted), thời gian đọc ảnh giảm bao nhiêu và độ nhạy phát hiện tổn thương tăng lên bao nhiêu?"*
-4. **Hợp tác Liên ngành (Bác sĩ + Kỹ sư AI)**:
-   - Có sự tham gia thực chất của các bác sĩ lâm sàng/chẩn đoán hình ảnh từ khâu thiết kế câu hỏi nghiên cứu, chuẩn hóa tiêu chuẩn chọn mẫu đến diễn giải hình thái học tổn thương trên bản đồ nhiệt Grad-CAM.
+1. **Dữ liệu Thực tế & Chuẩn vàng (Gold Standard / Specialized Datasets)**:
+   - Sở hữu tập dữ liệu thực tế có giá trị cao (ví dụ: dữ liệu lâm sàng đa trung tâm, hoặc dữ liệu khảo sát/điều tra số đặc thù như Darkweb-CSAM, PAN12).
+   - Có quy trình gán nhãn thủ công được kiểm soát chặt chẽ bởi chuyên gia.
+2. **Thiết kế Nghiên cứu Chuẩn mực Quốc tế (Standardized Guidelines)**:
+   - Tuân thủ nghiêm ngặt các hướng dẫn báo cáo quốc tế: **PRISMA** (cho tổng quan tài liệu hệ thống — như `paper/main.tex`), **STARD** (cho nghiên cứu độ chính xác chẩn đoán), **TRIPOD** (cho mô hình tiên lượng/dự đoán), hoặc **CONSORT-AI** (cho thử nghiệm lâm sàng có can thiệp AI).
+   - Kèm phân tích định lượng và thống kê chặt chẽ (Accuracy, Precision, Recall, F1-score, ROC-AUC, PR-AUC, thời gian huấn luyện và dự đoán).
+3. **Chứng minh Tính hữu dụng Thực tiễn (Practical / Clinical Utility)**:
+   - Giải quyết bài toán thực tế: hỗ trợ bác sĩ sàng lọc sớm hoặc hỗ trợ cơ quan thực thi pháp luật lọc tự động hàng triệu báo cáo/tệp tin.
+4. **Hợp tác Liên ngành**:
+   - Kết hợp góc nhìn của Khoa học Máy tính với Y học, Tâm lý học hoặc Xã hội học/Pháp y.
 
 ---
 
@@ -109,7 +111,7 @@ Trong giới học thuật Y khoa và Y sinh (ví dụ: *Lancet Digital Health, 
 
 ### 4.7. Các phần bắt buộc theo Quy chuẩn Quốc tế
 1. **Ethical Approval and Consent to Participate**: Tên hội đồng đạo đức, số quyết định phê duyệt.
-2. **Data and Code Availability**: Đường dẫn mã nguồn công khai (GitHub), quy trình xin quyền truy cập dữ liệu (ADNI/AIBL).
+2. **Data and Code Availability**: Đường dẫn mã nguồn công khai (GitHub), quy trình xin quyền truy cập dữ liệu.
 3. **Funding Statement**: Cơ quan cấp kinh phí nghiên cứu.
 4. **Conflicts of Interest**: Tuyên bố không có xung đột lợi ích tài chính.
 5. **Authors' Contributions**: Mô tả đóng góp của từng tác giả theo chuẩn phân loại **CRediT** (Conceptualization, Methodology, Data curation, Formal analysis, Writing – review & editing).

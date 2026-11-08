@@ -66,7 +66,7 @@ EXCLUDED_DIRS = frozenset({
 SCRIPT_DIR = pathlib.Path(__file__).resolve().parent
 REF_DIR = SCRIPT_DIR.parent / "references"
 
-DEFAULT_EXTENSIONS = (".md", ".mdx", ".markdown", ".txt", ".json", ".html", ".htm",
+DEFAULT_EXTENSIONS = (".md", ".mdx", ".markdown", ".tex", ".txt", ".json", ".html", ".htm",
                       ".yaml", ".yml", ".ts", ".tsx", ".js", ".jsx", ".vue", ".svelte")
 
 # Registers and the pronouns each one expects / forbids. This is the fallback used
@@ -266,10 +266,11 @@ class Blocklists:
 FENCE_RE = re.compile(r"^\s*(```|~~~)")
 INLINE_CODE_RE = re.compile(r"`[^`\n]*`")
 URL_RE = re.compile(r"(?:https?://|www\.)\S+")
+LATEX_COMMENT_RE = re.compile(r"(?<!\\)%.*$")
 
 
-def mask_code(lines: Sequence[str], is_markdown: bool) -> List[str]:
-    """Blank out code spans/fences and URLs, preserving line and column offsets."""
+def mask_code(lines: Sequence[str], is_markdown: bool, is_latex: bool = False) -> List[str]:
+    """Blank out code spans/fences, LaTeX comments, and URLs, preserving line and column offsets."""
     masked: List[str] = []
     in_fence = False
     for line in lines:
@@ -281,6 +282,8 @@ def mask_code(lines: Sequence[str], is_markdown: bool) -> List[str]:
             masked.append(" " * len(line))
             continue
         out = line
+        if is_latex:
+            out = LATEX_COMMENT_RE.sub(lambda m: " " * len(m.group(0)), out)
         if is_markdown:
             out = INLINE_CODE_RE.sub(lambda m: " " * len(m.group(0)), out)
         out = URL_RE.sub(lambda m: " " * len(m.group(0)), out)
@@ -340,7 +343,7 @@ TONE_OLD_UY_RE = re.compile(rf"(?<![{VN_LETTER}])[{VN_LETTER}]*(?<![qQ])[ùúủ
 TONE_NEW_RE = re.compile(rf"(?<![{VN_LETTER}])[{VN_LETTER}]*o[àáảãạèéẻẽẹ](?![{VN_LETTER}])")
 TONE_NEW_UY_RE = re.compile(rf"(?<![{VN_LETTER}])[{VN_LETTER}]*(?<![qQ])u[ỳýỷỹỵ](?![{VN_LETTER}])")
 
-NUM_COMMA_GROUP_RE = re.compile(r"(?<![\d.,])\d{1,3}(?:,\d{3})+(?![\d,])")
+NUM_COMMA_GROUP_RE = re.compile(r"(?<![\d.,])[1-9]\d{0,2}(?:,\d{3})+(?![\d,])")
 NUM_UNGROUPED_RE = re.compile(r"(?<![\d.,])(\d{5,})(?![\d.,])\s*(VND|vnd|₫|đồng)")
 NUM_DOT_DECIMAL_RE = re.compile(r"(?<![\d.,])\d+\.\d{1,2}(?![\d])\s*(?:tỷ|tỉ|triệu|nghìn|%|m²)")
 SQM_RE = re.compile(r"(?<![\w])m2(?![\w])", re.IGNORECASE)
@@ -450,7 +453,8 @@ class Validator:
 
         lines = text.splitlines()
         is_markdown = path.suffix.lower() in (".md", ".mdx", ".markdown")
-        masked = mask_code(lines, is_markdown)
+        is_latex = path.suffix.lower() == ".tex"
+        masked = mask_code(lines, is_markdown, is_latex)
         findings: List[Finding] = []
 
         def emit(rule, severity, lineno, col, snippet, message, hint=""):
@@ -522,32 +526,33 @@ class Validator:
                      f"Vietnamese written without diacritics: “{m.group(0)}”",
                      "restore the tone marks; unaccented forms belong in slugs and meta only")
 
-            for m in NUM_COMMA_GROUP_RE.finditer(line):
-                fixed = m.group(0).replace(",", ".")
-                emit("NUM001", ERROR, i, m.start() + 1, m.group(0),
-                     f"comma-grouped number “{m.group(0)}”", f"write “{fixed}”")
+            if self.doctype != "en-paper":
+                for m in NUM_COMMA_GROUP_RE.finditer(line):
+                    fixed = m.group(0).replace(",", ".")
+                    emit("NUM001", ERROR, i, m.start() + 1, m.group(0),
+                         f"comma-grouped number “{m.group(0)}”", f"write “{fixed}”")
 
-            for m in NUM_UNGROUPED_RE.finditer(line):
-                emit("NUM002", WARN, i, m.start() + 1, m.group(0),
-                     f"ungrouped currency amount “{m.group(0)}”",
-                     "group with periods, or use the tỷ/triệu scale in marketing copy")
+                for m in NUM_UNGROUPED_RE.finditer(line):
+                    emit("NUM002", WARN, i, m.start() + 1, m.group(0),
+                         f"ungrouped currency amount “{m.group(0)}”",
+                         "group with periods, or use the tỷ/triệu scale in marketing copy")
 
-            for m in NUM_DOT_DECIMAL_RE.finditer(line):
-                fixed = m.group(0).replace(".", ",", 1)
-                emit("NUM003", ERROR, i, m.start() + 1, m.group(0),
-                     f"period used as a decimal separator in “{m.group(0)}”",
-                     f"write “{fixed}”")
+                for m in NUM_DOT_DECIMAL_RE.finditer(line):
+                    fixed = m.group(0).replace(".", ",", 1)
+                    emit("NUM003", ERROR, i, m.start() + 1, m.group(0),
+                         f"period used as a decimal separator in “{m.group(0)}”",
+                         f"write “{fixed}”")
+
+                for m in DATE_RE.finditer(line):
+                    first, second = int(m.group(1)), int(m.group(2))
+                    if second > 12 and first <= 12:
+                        emit("DATE001", ERROR, i, m.start() + 1, m.group(0),
+                             f"date “{m.group(0)}” looks like MM/dd/yyyy",
+                             f"write “{m.group(2)}/{m.group(1)}/{m.group(3)}” (dd/MM/yyyy)")
 
             for m in SQM_RE.finditer(line):
                 emit("NUM004", WARN, i, m.start() + 1, m.group(0),
                      "ASCII “m2”", "use the superscript “m²”")
-
-            for m in DATE_RE.finditer(line):
-                first, second = int(m.group(1)), int(m.group(2))
-                if second > 12 and first <= 12:
-                    emit("DATE001", ERROR, i, m.start() + 1, m.group(0),
-                         f"date “{m.group(0)}” looks like MM/dd/yyyy",
-                         f"write “{m.group(2)}/{m.group(1)}/{m.group(3)}” (dd/MM/yyyy)")
 
             for m in PHONE_RE.finditer(line):
                 emit("PHONE001", ERROR, i, m.start() + 1, m.group(0),

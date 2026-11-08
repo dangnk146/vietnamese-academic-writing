@@ -1,6 +1,8 @@
-# Thuật ngữ Chuyên ngành Học thuật & Trí tuệ Nhân tạo Y sinh (vi-VN / EN)
+<!-- vlc-disable: ALL -->
 
-Từ điển chuẩn hóa thuật ngữ khoa học dành cho viết Luận văn Thạc sĩ, Tiến sĩ và Paper IEEE/Q1 ngành Khoa học máy tính, Học máy và Xử lý ảnh Y sinh.
+# Thuật ngữ Chuyên ngành Học thuật, Trí tuệ Nhân tạo, NLP & Y sinh (vi-VN / EN)
+
+Từ điển chuẩn hóa thuật ngữ khoa học dành cho viết và dịch thuật Luận văn Thạc sĩ, Tiến sĩ và Paper IEEE/Q1 ngành Khoa học máy tính, Học máy, Xử lý ngôn ngữ tự nhiên (NLP), Tổng quan hệ thống (PRISMA) và Xử lý ảnh Y sinh.
 
 ---
 
@@ -11,6 +13,8 @@ Từ điển chuẩn hóa thuật ngữ khoa học dành cho viết Luận văn 
 | Deep Learning | Học sâu | Thuật ngữ chuẩn trong toàn văn luận văn. |
 | Machine Learning | Học máy | Chuẩn mực. |
 | Convolutional Neural Network (CNN) | Mạng nơ-ron tích chập | Viết tắt: `CNN` hoặc `\acs{CNN}`. |
+| Long Short-Term Memory (LSTM) | Mạng bộ nhớ dài-ngắn | Viết tắt: `LSTM`. |
+| Bidirectional LSTM (BLSTM / BiLSTM) | Mạng LSTM hai chiều | Nắm bắt phụ thuộc chuỗi theo cả hai chiều. |
 | Vision Transformer (ViT) | Mạng biến đổi thị giác / Vision Transformer | Giữ nguyên `Vision Transformer` hoặc `ViT`. |
 | State Space Model (SSM) | Mô hình không gian trạng thái | Viết tắt: `SSM`. |
 | Attention Mechanism | Cơ chế chú ý | Chuẩn mực. |
@@ -85,7 +89,24 @@ Từ điển chuẩn hóa thuật ngữ khoa học dành cho viết Luận văn 
 
 ---
 
-## 4. Phương pháp luận Thực nghiệm & Đo lường (Experimental Methodology & Metrics)
+## 4. Xử lý Ngôn ngữ Tự nhiên, Tổng quan PRISMA & An toàn Thông tin (NLP, Survey & Forensics)
+
+| Thuật ngữ Tiếng Anh | Tiếng Việt chuẩn học thuật | Ghi chú & Định dạng |
+|---|---|---|
+| Systematic Literature Review (SLR) | Tổng quan tài liệu hệ thống | Viết tắt: `SLR`. Không dịch là *"đánh giá văn học"*. |
+| PRISMA Guidelines / Flow Diagram | Quy chuẩn PRISMA / Sơ đồ dòng PRISMA | Chuẩn báo cáo tổng quan hệ thống. |
+| Inclusion / Exclusion Criteria | Tiêu chí lựa chọn / Tiêu chí loại trừ | Chuẩn sàng lọc bài báo hoặc bệnh nhân. |
+| Natural Language Processing (NLP) | Xử lý ngôn ngữ tự nhiên | Viết tắt: `NLP`. |
+| Large Language Model (LLM) | Mô hình ngôn ngữ lớn | Viết tắt: `LLM`. Trong tiếng Anh không viết *"big language models"*. |
+| Child Sexual Abuse Material (CSAM) | Tài liệu xâm hại tình dục trẻ em | Viết tắt: `CSAM`. |
+| Online Grooming | Hành vi dụ dỗ trẻ em trực tuyến | Không dịch là *"chăn dắt"*. |
+| Sexual Predator | Đối tượng xâm hại tình dục | Tránh dịch văn học *"kẻ săn mồi"*. |
+| Digital File Traces | Dấu vết tệp kỹ thuật số | Thuật ngữ điều tra số (digital forensics). |
+| Sexual Abuse Phrase (SAP) | Cụm từ chỉ dấu xâm hại tình dục | Viết tắt: `SAP`. |
+
+---
+
+## 5. Phương pháp luận Thực nghiệm & Đo lường (Experimental Methodology & Metrics)
 
 | Thuật ngữ Tiếng Anh | Tiếng Việt chuẩn học thuật | Định dạng toán học & Ghi chú |
 |---|---|---|
@@ -93,7 +114,7 @@ Từ điển chuẩn hóa thuật ngữ khoa học dành cho viết Luận văn 
 | Patient-level split | Phân chia ở cấp độ bệnh nhân | Chuẩn thực nghiệm bắt buộc để tránh rò rỉ. |
 | Slice-level split | Phân chia ở cấp độ lát cắt | Nguyên nhân chính gây ra độ chính xác ảo. |
 | External Validation | Kiểm chứng độc lập ngoài / Kiểm chứng ngoài | Kiểm định trên tập dữ liệu độc lập (như AIBL). |
-| $k$-fold Cross-Validation | Kiểm chứng chéo $k$-fold | Trình bày: `$k$-fold`. |
+| $k$-fold Cross-Validation | Kiểm chứng chéo $k$-fold | Trình bày: `$k$-fold` (ví dụ `5-fold`). |
 | Accuracy | Độ chính xác | Ký hiệu: `Accuracy` hoặc `Acc`. |
 | Balanced Accuracy | Độ chính xác cân bằng | Ký hiệu: `Balanced Accuracy`. |
 | Precision | Độ chuẩn xác | Chuẩn: `Precision`. |
@@ -102,12 +123,13 @@ Từ điển chuẩn hóa thuật ngữ khoa học dành cho viết Luận văn 
 | Macro-F1 / Weighted-F1 | Điểm Macro-F1 / Weighted-F1 | Chuẩn mực. |
 | Matthews Correlation Coefficient | Hệ số tương quan Matthews | Viết tắt: `MCC` hoặc `\acs{MCC}`. |
 | Area Under ROC Curve (AUC) | Diện tích dưới đường cong ROC | Viết tắt: `AUC` hoặc `ROC-AUC`. |
+| Precision–Recall AUC (PR-AUC) | Diện tích dưới đường cong Precision–Recall | Viết tắt: `PR-AUC`. |
 | Grad-CAM | Bản đồ kích hoạt phân lớp theo trọng số gradient | `\acs{Grad-CAM}`. |
 | t-SNE | Thuật toán giảm chiều dữ liệu t-SNE | Trực quan hóa cụm đặc trưng. |
 
 ---
 
-## 5. Bảng bẫy Dịch máy và Calque trong Văn bản Học thuật
+## 6. Bảng bẫy Dịch máy và Calque trong Văn bản Học thuật
 
 <!-- machine-readable: glossary -->
 
@@ -128,6 +150,7 @@ Từ điển chuẩn hóa thuật ngữ khoa học dành cho viết Luận văn 
 | plagiarism | `ăn cắp ý tưởng` | `đạo văn` | Thuật ngữ học thuật |
 | learning outcomes | `kết quả học tập mong muốn` | `chuẩn đầu ra` | Thuật ngữ giáo dục |
 | conduct investigation | `thực hiện một cuộc điều tra` | `tiến hành khảo sát` | Dịch thô tiếng Anh |
+| literature review | `đánh giá văn học` | `tổng quan tài liệu` | Dịch sai từ *literature* |
 | is designed by | `được thiết kế bởi` | `do tác giả thiết kế` | Tránh bị động rườm rà |
 | in an effective manner | `trong một cách thức hiệu quả` | `một cách hiệu quả` | Dịch thô tiếng Anh |
 | play an important role | `đóng một vai trò quan trọng` | `đóng vai trò quan trọng` | Bỏ chữ "một" thừa |

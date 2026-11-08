@@ -1,0 +1,72 @@
+[
+  {
+    "id": "clean-vi-01",
+    "group": "clean",
+    "language": "vi",
+    "doctype": "thesis",
+    "source": "Dữ liệu Alzheimer được thu thập từ cơ sở dữ liệu ADNI bao gồm các ảnh chụp cộng hưởng từ não bộ ba chiều. Quá trình tiền xử lý ảnh sử dụng công cụ SPM12 để chuẩn hóa không gian tọa độ MNI, bóc tách mô chất xám và hiệu chỉnh chuyển động đầu của đối tượng quét.",
+    "decision": "preserve",
+    "allowed_edits": [
+      "No edit needed; return byte-for-byte under clean no-op."
+    ],
+    "review_focus": "Do not add AI buzzwords such as 'bức tranh toàn cảnh' or 'chìa khóa then chốt'."
+  },
+  {
+    "id": "clean-en-01",
+    "group": "clean",
+    "language": "en",
+    "doctype": "en-paper",
+    "source": "Under an institutional ethics waiver, the Darkweb-CSAM dataset was compiled and manually annotated during our prior work~\\citep{Ngo-Elsevier:2024}; however, issuing body credentials and reference numbers were not cataloged in the archival records. Raw data access remains restricted to vetted researchers. Correspondingly, our public repository hosts only scripts and training configurations.",
+    "decision": "preserve",
+    "allowed_edits": [
+      "No edit needed; return byte-for-byte."
+    ],
+    "review_focus": "Preserve ~\\citep{Ngo-Elsevier:2024} and maintain burstiness CV >= 0.45."
+  },
+  {
+    "id": "tell-en-01",
+    "group": "ai-tells",
+    "language": "en",
+    "doctype": "en-paper",
+    "source": "Research on sexual abuse and CSAM is not straightforward; it requires strict ethical oversight, careful data handling, and protection for victims. Our colleagues collected the Darkweb-CSAM dataset and labeled it manually in our earlier work~\\citep{Ngo-Elsevier:2024}. That project received a formal ethics exemption, although we do not have the details on the issuing body or the reference number. Access to this dataset is not public and requires permission. On GitHub, we provide only our code and configuration files, without any dataset records or sensitive material.",
+    "decision": "rewrite",
+    "expected_violations": [
+      "ACAD009: negative parallelism opener ('is not straightforward; it requires')",
+      "ACAD009: cutoff disclaimer ('although we do not have the details on')",
+      "ACAD009: tailing negation ('without any dataset records')",
+      "ACAD010: high binomial density (5/5 sentences)",
+      "ACAD011: low burstiness (CV < 0.35)"
+    ],
+    "review_focus": "De-template into direct factual statements and balance sentence lengths."
+  },
+  {
+    "id": "tell-vi-01",
+    "group": "ai-tells",
+    "language": "vi",
+    "doctype": "thesis",
+    "source": "Bảng 4 mang lại một cái nhìn toàn diện và sâu sắc về bức tranh toàn cảnh của các mô hình. Nghiên cứu này không chỉ dừng lại ở phân loại văn bản mà còn khai phá tiềm năng phát hiện grooming. Điều này là minh chứng hùng hồn cho thấy tương lai đầy hứa hẹn.",
+    "decision": "rewrite",
+    "expected_violations": [
+      "ACAD012: 'bức tranh toàn cảnh'",
+      "ACAD012: 'không chỉ dừng lại ở phân loại văn bản mà còn'",
+      "ACAD012: 'khai phá tiềm năng'",
+      "ACAD005: 'minh chứng hùng hồn'"
+    ],
+    "review_focus": "Replace sensational filler with objective quantitative evaluation."
+  },
+  {
+    "id": "protected-01",
+    "group": "preservation",
+    "language": "vi",
+    "doctype": "paper",
+    "source": "Theo kết quả thực nghiệm, mô hình đạt độ nhạy $S = 94,5\\%$ ($p < 0,001$) trên tập dữ liệu đánh giá~\\cite{Ngo-Elsevier:2024}.",
+    "decision": "preserve_protected",
+    "protected_tokens": [
+      "~\\cite{Ngo-Elsevier:2024}",
+      "$S = 94,5\\%$",
+      "($p < 0,001$)"
+    ],
+    "review_focus": "Never convert Vietnamese decimal comma to dot in math or strip LaTeX citations."
+  }
+]
+

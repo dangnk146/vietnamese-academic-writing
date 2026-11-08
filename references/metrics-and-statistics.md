@@ -1,3 +1,5 @@
+<!-- vlc-disable: ALL -->
+
 # Chuẩn mực Trình bày Độ đo, Công thức Toán học & Kiểm định Thống kê (Metrics & Statistical Tests)
 
 Tài liệu này cung cấp ký hiệu chuẩn LaTeX, công thức toán học và ngữ cảnh học thuật chuẩn mực cho các độ đo đánh giá mô hình học sâu y sinh và các phương pháp kiểm định thống kê trong Luận văn Thạc sĩ, Tiến sĩ và Paper IEEE/ISI/Scopus Q1.

@@ -1,6 +1,8 @@
+<!-- vlc-disable: ALL -->
+
 # Hướng dẫn quy chuẩn soạn thảo LaTeX (Luận văn ThS / TS & Bài báo Khoa học)
 
-Tài liệu này chuẩn hóa toàn bộ quy cách định dạng mã nguồn LaTeX cho luận văn Thạc sĩ và các bài báo khoa học tiếng Việt, được đúc kết trực tiếp từ cấu trúc chuẩn mực của `chapters/chapter1.tex`, `chapters/chapter2.tex` và cấu hình hệ thống tại `main.tex`.
+Tài liệu này chuẩn hóa toàn bộ quy cách định dạng mã nguồn LaTeX cho luận văn Thạc sĩ và các bài báo khoa học (tiếng Việt và tiếng Anh), được đúc kết trực tiếp từ cấu trúc chuẩn mực của `chapters/chapter1.tex`, `chapters/chapter2.tex` và các mẫu bài báo quốc tế (`paper/main.tex`).
 
 ---
 
@@ -8,15 +10,16 @@ Tài liệu này chuẩn hóa toàn bộ quy cách định dạng mã nguồn La
 
 ### 1.1. Tỷ lệ phần trăm trong văn xuôi (Khuyên dùng Text Mode)
 Trong văn bản tiếng Việt, các chỉ số tỷ lệ phần trăm thông thường nằm trong câu văn **không cần và không nên đưa vào Math Mode** (`$...$`).
-- **Quy tắc chuẩn**: Viết trực tiếp ở chế độ văn bản (Text Mode), dùng dấu phẩy `,` cho phần thập phân và escape ký tự phần trăm bằng `\%`.
+- **Quy tắc chuẩn cho văn bản Tiếng Việt**: Viết trực tiếp ở chế độ văn bản (Text Mode), dùng dấu phẩy `,` cho phần thập phân và escape ký tự phần trăm bằng `\%`.
   - ✅ `84,2\%`, `94,18\%`, `68,2\%`, `51,13\%`, `97,19\%`
   - ❌ `$84,2\%$` *(không có ngoặc nhọn: TeX chèn khoảng trắng thừa thành `84, 2%`)*
   - ⚠️ `$84{,}2\%$` *(đúng về mặt kỹ thuật toán TeX nhưng rườm rà không cần thiết khi viết trong câu văn)*
+- **Quy tắc chuẩn cho bài báo Tiếng Anh (như `paper/main.tex`)**: Dùng dấu chấm thập phân `.` thống nhất trong toàn bộ văn bản và bảng biểu (`94.28\%`, `99.89\%`). Tuyệt đối không để lẫn dấu phẩy tiếng Việt (`95,37\%`) vào bảng biểu tiếng Anh.
 - **Khoảng giá trị phần trăm**:
-  - Dùng chữ nối trong câu: `từ 60\% đến 70\%`
+  - Dùng chữ nối trong câu: `từ 60\% đến 70\%` (tiếng Anh: `between 60\% and 70\%`)
   - Dùng en-dash `--` trong bảng biểu: `94,18\% -- 98,96\%`
 
-### 1.2. Bản chất dấu ngoặc nhọn `{,}` trong Math Mode
+### 1.2. Bản chất dấu ngoặc nhọn `{,}` trong Math Mode (Tiếng Việt)
 - **Tại sao lại có `{,}`?**
   - Trong TeX Math Mode (`$...$`), dấu phẩy `,` mặc định là ký hiệu ngắt câu (`\mathpunct` - punctuation), tương tự dấu phẩy trong tọa độ $(x, y)$ hay dãy số $1, 2, 3$.
   - Theo luật typography của TeX, sau bất kỳ `\mathpunct` nào, TeX sẽ **tự động thêm một khoảng trắng nhỏ** (`\thinspace`, 3mu).
@@ -31,8 +34,9 @@ Trong văn bản tiếng Việt, các chỉ số tỷ lệ phần trăm thông t
     - ✅ Đơn vị đo lường có số mũ: `$6.116\text{ mm}^3$`, `$\text{cm}^3$`, `$15,0\text{ GFLOPs}$`
 
 ### 1.3. Phân cách hàng nghìn
-Theo quy chuẩn tiếng Việt, phân cách hàng nghìn sử dụng dấu chấm `.`:
-- Trong văn bản: `$1.225$`, `$1.717$`, `$6.820$`, `$4.071$`, `$16.000$`, `$3.670$` hoặc viết trực tiếp trong bảng: `1.726`, `1.161`.
+- Theo quy chuẩn **Tiếng Việt**, phân cách hàng nghìn sử dụng dấu chấm `.`:
+  - Trong văn bản: `$1.225$`, `$1.717$`, `$6.820$`, `$4.071$`, `$16.000$`, `$3.670$` hoặc viết trực tiếp trong bảng: `1.726`, `1.161`.
+- Theo quy chuẩn **Tiếng Anh**, phân cách hàng nghìn sử dụng dấu phẩy `,`: `6,280`, `198,054`.
 
 ---
 
@@ -40,46 +44,43 @@ Theo quy chuẩn tiếng Việt, phân cách hàng nghìn sử dụng dấu ch�
 
 Mọi dẫn chiếu chéo đều phải có **dấu ngã `~` (non-breaking space)** đứng trước `\ref` để đảm bảo số hiệu không bị rớt xuống đầu dòng tiếp theo làm mất thẩm mỹ trang in:
 
-| Loại đối tượng | Cách viết chuẩn | Ví dụ mẫu |
+| Loại đối tượng | Cách viết chuẩn Tiếng Việt | Cách viết chuẩn Tiếng Anh |
 |---|---|---|
-| **Hình vẽ (đầu câu)** | `Hình~\ref{fig:...}` | `Hình~\ref{fig:disease_distribution_mri} thể hiện phân bố...` |
-| **Hình vẽ (giữa câu)** | `hình~\ref{fig:...}` hoặc `Hình~\ref{fig:...}` | `...được minh họa ở hình~\ref{fig:disease_distribution_mri}.` |
-| **Bảng biểu** | `Bảng~\ref{tab:...}` | `...tổng hợp chi tiết trong Bảng~\ref{tab:data_leakage_inflation}.` |
-| **Công thức / Phương trình** | `công thức~(\ref{eq:...})` hoặc `phương trình~(\ref{eq:...})` | `...xác định theo công thức~(\ref{eq:scaled_dot_product_attention}).` |
-| **Chương** | `Chương~<N>` hoặc `Chương~\ref{chap:...}` | `...hiện thực hóa trong Chương~3.` |
-| **Mục / Tiểu mục** | `Mục~\ref{sec:...}` hoặc `Mục~\ref{subsec:...}` | `...trình bày chi tiết tại Mục~\ref{sec:objectives}.` |
+| **Hình vẽ (đầu câu)** | `Hình~\ref{fig:...}` | `Figure~\ref{fig:...}` |
+| **Hình vẽ (giữa câu)** | `hình~\ref{fig:...}` hoặc `Hình~\ref{fig:...}` | `Figure~\ref{fig:...}` hoặc `Fig.~\ref{fig:...}` |
+| **Bảng biểu** | `Bảng~\ref{tab:...}` | `Table~\ref{tab:...}` |
+| **Công thức / Phương trình** | `công thức~(\ref{eq:...})` hoặc `phương trình~(\ref{eq:...})` | `Equation~(\ref{eq:...})` |
+| **Chương** | `Chương~<N>` hoặc `Chương~\ref{chap:...}` | `Chapter~\ref{chap:...}` |
+| **Mục / Tiểu mục** | `Mục~\ref{sec:...}` hoặc `Mục~\ref{subsec:...}` | `Section~\ref{sec:...}` |
 
 ---
 
 ## 3. Trích dẫn tài liệu tham khảo (Citations)
 
-- **Nguyên tắc gắn kết**: Luôn dùng `~\cite{key}` gắn liền sau tên tác giả hoặc nội dung kết luận trước dấu chấm câu, không chèn dấu cách rời trước `\cite`.
+- **Nguyên tắc gắn kết**: Luôn dùng `~\cite{key}` (hoặc `~\citep{key}` nếu bài báo dùng gói `apalike`/`natbib`) gắn liền sau tên tác giả hoặc nội dung kết luận trước dấu chấm câu, không chèn dấu cách rời trước `\cite`.
 - **Mẫu câu trích dẫn tác giả**:
   - Tiếng Việt: `Tên_tác_giả và cộng sự~\cite{key}`
     - ✅ `Ali và cộng sự~\cite{ali2025deep}`
     - ✅ `Wen và cộng sự~\cite{wen2020convolutional}`
     - ✅ `Young và cộng sự~\cite{young2025data}`
-  - Tiếng Anh (trong bảng biểu hoặc chú thích ngắn):
-    - `Yagis et al.~\cite{yagis2021effect}`
+  - Tiếng Anh:
+    - `Yagis et al.~\cite{yagis2021effect}` / `Puentes et al.~\citep{Puentes-IEEE:2023}`
 - **Trích dẫn nhiều tài liệu**: Nhóm các khóa trong cùng một lệnh, phân cách bằng dấu phẩy:
   - ✅ `...hệ thống y tế công cộng~\cite{reitz_global_2023,m._ghazal_alzheimer_2022}.`
   - ❌ `...y tế công cộng~\cite{reitz_global_2023}~\cite{m._ghazal_alzheimer_2022}.`
 
 ---
 
-## 4. Quản lý từ viết tắt (Acronyms)
+## 4. Quản lý từ viết tắt (Acronyms — Kiểm tra Preamble trước khi dùng)
 
-Luận văn sử dụng gói `acronym` (khai báo tại `main.tex`).
-- **Macro gọi từ viết tắt**: Dùng `\acs{KEY}` để in ra dạng viết tắt chuẩn:
-  - `\acs{MRI}`, `\acs{AD}`, `\acs{CN}`, `\acs{EMCI}`, `\acs{LMCI}`, `\acs{GM}`, `\acs{WM}`, `\acs{CSF}`
-  - `\acs{CNN}`, `\acs{ViT}`, `\acs{SSM}`, `\acs{Grad-CAM}`, `\acs{MCC}`, `\acs{AUC}`, `\acs{CBAM}`, `\acs{HBA}`, `\acs{SRM}`, `\acs{SSD}`
-- **Quy tắc lần đầu xuất hiện**:
-  - Phải ghi rõ thuật ngữ đầy đủ (tiếng Việt hoặc tiếng Anh) kèm mã viết tắt:
-    - `chụp cộng hưởng từ \acs{MRI}`
-    - `bệnh Alzheimer (\acs{AD})`
-    - `nhận thức bình thường (\acs{CN})`
-    - `suy giảm nhận thức nhẹ giai đoạn sớm (\acs{EMCI})`
-    - `chất xám \acs{GM}, chất trắng \acs{WM} và dịch não tủy \acs{CSF}`
+- **Trường hợp 1: Tài liệu CÓ khai báo `\usepackage{acronym}` (như luận văn)**:
+  - Dùng `\acs{KEY}` để in ra dạng viết tắt chuẩn:
+    - `\acs{MRI}`, `\acs{AD}`, `\acs{CN}`, `\acs{EMCI}`, `\acs{LMCI}`, `\acs{GM}`, `\acs{WM}`, `\acs{CSF}`
+    - `\acs{CNN}`, `\acs{ViT}`, `\acs{SSM}`, `\acs{Grad-CAM}`, `\acs{MCC}`, `\acs{AUC}`, `\acs{CBAM}`, `\acs{HBA}`, `\acs{SRM}`, `\acs{SSD}`
+  - Lần đầu xuất hiện ghi rõ thuật ngữ đầy đủ kèm mã viết tắt: `chụp cộng hưởng từ \acs{MRI}`, `bệnh Alzheimer (\acs{AD})`.
+- **Trường hợp 2: Tài liệu KHÔNG khai báo gói `acronym` (như bài báo `article` trong `paper/main.tex`)**:
+  - Tuyệt đối không dùng `\acs{...}` vì sẽ gây lỗi biên dịch LaTeX.
+  - Viết trực tiếp tên đầy đủ kèm chữ viết tắt trong ngoặc đơn ở lần đầu: `child sexual abuse material (CSAM)`, các lần sau viết `CSAM`.
 
 ---
 
@@ -205,9 +206,9 @@ y(t) &= C x(t)
 
 ---
 
-## 9. Mở đầu chương (Chapter Opener)
+## 9. Mở đầu chương (Chapter Opener — Dành cho Luận văn có gói `pifont`)
 
-Theo phong cách thiết kế của luận văn, ngay sau tiêu đề `\chapter` và nhãn `\label`, luôn có biểu tượng bút `\ding{45}` (gói `pifont`) kèm câu tóm lược nội dung chương:
+Theo phong cách thiết kế của luận văn (khi Preamble có khai báo `\usepackage{pifont}`), ngay sau tiêu đề `\chapter` và nhãn `\label`, có biểu tượng bút `\ding{45}` kèm câu tóm lược nội dung chương:
 
 ```latex
 \chapter{TỔNG QUAN}
