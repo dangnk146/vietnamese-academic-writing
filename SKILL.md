@@ -92,7 +92,7 @@ Khi viết lại bài báo tiếng Anh gốc (`paper/main.tex`) để vừa đ�
 
 ---
 
-## Hợp đồng Biên tập & 7 Điều Cấm Tự Nhét (Never-Inject Guardrails)
+## Hợp đồng Biên tập & 8 Điều Cấm Tự Nhét (Never-Inject Guardrails)
 
 Để đảm bảo văn bản giữ trọn tính chân thực và không bị biến dạng thành văn mẫu AI, AI **tuyệt đối không được tự ý đưa thêm** các yếu tố sau vào bài viết:
 
@@ -110,6 +110,9 @@ Khi viết lại bài báo tiếng Anh gốc (`paper/main.tex`) để vừa đ�
    - Không tự ý chèn dấu gạch ngang `—` để làm màu kịch tính; không băm nhỏ câu văn học thuật thành các mảnh vụn cộc lốc.
 7. **CẤM TỰ Ý ĐỔI TỪ KHÓA CHÍNH SANG TỪ ĐỒNG NGHĨA LẠ (`Synonym Cycling`)**:
    - Luôn lặp lại nhất quán từ khóa hạt nhân đã chốt ở Bước 0 từ đầu đến cuối văn bản.
+8. **CẤM TỰ NHÉT câu mở đầu tường thuật đề cương/mục lục (`Meta-Discourse / Syllabus Outline Tell` — `ACAD014`)**:
+   - ❌ Không tự viết: *"Our analysis focuses on three components: A, B, and C"*, *"Each entry reports publisher metadata..."*, *"The breakdown spans three primary categories..."*, *"Mục này tập trung vào ba khía cạnh chính..."*.
+   - ✅ Thay vào đó: Đi thẳng vào **luận điểm khoa học thực nghiệm** (Substantive Empirical Insight) phản ánh bản chất đề tài.
 
 ---
 

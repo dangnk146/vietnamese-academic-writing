@@ -28,6 +28,7 @@ RULE_DOCS = {
     "ACAD011": "low sentence-length burstiness (CV < 0.35 across ≥4 sentences) or low function-word trigram entropy (<0.82) — flat AI sentence rhythm",
     "ACAD012": "Vietnamese AI structural template or buzzword filler (“một cách toàn diện và sâu sắc”, “bức tranh toàn cảnh”, “không đơn thuần là X mà còn Y”)",
     "ACAD013": "coarse, flippant, or overly casual colloquialisms in academic writing (“khử mùi”, “suồng sã”, “sỗ sàng”, “chém gió”, “bóc phốt”, “ngon ăn”, “ăn đứt”)",
+    "ACAD014": "formulaic meta-discourse or syllabus outline announcement (“our analysis focuses on three components”, “spans three primary categories”, “each entry reports publisher metadata”)",
     "EDU001": "abolished secondary (THCS/THPT) overall grading term (Thông tư 22/2021)",
     "EDU002": "“bạn” addressing a student in a teacher's voice",
     "EDU003": "“cần cải thiện” on a primary report card instead of “cần cố gắng” (Thông tư 27/2020)",
@@ -167,6 +168,22 @@ EN_AI_STRUCTURE_RE = re.compile(
 # Prose em-dash detector (excluding LaTeX tables/math)
 PROSE_EM_DASH_RE = re.compile(r"(?<=\w)\s*(?:—|--)\s*(?=\w)")
 
+# Formulaic Meta-Discourse / Outline Syllabus Tell (ACAD014)
+# Patterns where AI introduces sections or tables like a robotic syllabus outline:
+EN_META_DISCOURSE_RE = re.compile(
+    r"(?:"
+    r"\b(?:our\s+analysis\s+focuses\s+on\s+(?:three|two|four|five)\s+(?:components|parts|dimensions|aspects|axes))\b"
+    r"|\b(?:spans\s+(?:three|four|five)\s+primary\s+(?:categories|domains|areas|facets))\b"
+    r"|\b(?:each\s+entry\s+reports\s+publisher\s+metadata)\b"
+    r"|\b(?:for\s+studies\s+that\s+do\s+not\s+fit\s+neatly)\b"
+    r"|\b(?:to\s+ensure\s+every\s+methodology\s+is\s+thoroughly\s+covered)\b"
+    r"|\b(?:research\s+tasks\s+vary\s+widely\s+across\s+the\s+corpus)\b"
+    r"|\b(?:first,\s+this\s+section\s+analyzes\b[^.?!]{0,100}\bnext,\s+we\s+review\b[^.?!]{0,100}\bfinally,\s+we\s+highlight)\b"
+    r"|\b(?:this\s+section\s+systematically\s+evaluates\s+empirical\s+literature\s+across\s+(?:three|two|four)\s+core\s+dimensions)\b"
+    r")",
+    re.IGNORECASE,
+)
+
 # Binomial coordination (`X and Y` or `X or Y`) & Tricolon (`A, B, and C`) detector for English sentences
 TRICOLON_SENT_RE = re.compile(
     r"\b[a-zA-Z-]+(?:\s+[a-zA-Z-]+){0,3},\s+[a-zA-Z-]+(?:\s+[a-zA-Z-]+){0,3},\s+and\s+[a-zA-Z-]+(?:\s+[a-zA-Z-]+){0,3}\b"
@@ -287,6 +304,11 @@ def check_line(ctx, lineno, raw, masked):
             yield ("ACAD009", ERROR, match.start() + 1, match.group(0),
                    f"AI structural template “{match.group(0)}”",
                    "rewrite negative-parallelism openers, cutoff disclaimers (“we do not have the details”), and “only X, without any Y” tails as direct factual statements")
+
+        for match in EN_META_DISCOURSE_RE.finditer(masked):
+            yield ("ACAD014", ERROR, match.start() + 1, match.group(0),
+                   f"formulaic meta-discourse / syllabus outline announcement “{match.group(0)}”",
+                   "replace meta-announcements (“our analysis focuses on three components”, “each entry reports”, “spans three categories”) with substantive domain insights")
 
         for match in PROSE_EM_DASH_RE.finditer(masked):
             # Ignore CNN--LSTM / LSTM--CNN or numeric ranges

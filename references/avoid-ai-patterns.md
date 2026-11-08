@@ -39,6 +39,10 @@ Kế thừa và mở rộng từ nghiên cứu thực nghiệm của dự án [`
   - Tiếng Việt: `một cách toàn diện và sâu sắc`, `bức tranh toàn cảnh`, `khai phá tiềm năng`, `chìa khóa then chốt`, `minh chứng hùng hồn`, `mở ra kỷ nguyên mới`.
 - **Câu đuôi bình luận / Cảm thán của AI (`Unverified Closing Commentary`)**:
   - Tự ý thêm câu nhận định vô căn cứ ở cuối đoạn: *"Điều này mở ra một hướng đi đầy hứa hẹn..."*, *"This paves the way for future breakthroughs..."*.
+- **Mẫu Tường thuật Đề cương / Thông báo Mục lục Robot (`Meta-Discourse / Syllabus Outline Tell` — `ACAD014`)**:
+  - Tiếng Anh: `"our analysis focuses on three components: A, B, and C"`, `"spans three primary categories"`, `"each entry reports publisher metadata"`, `"for studies that do not fit neatly"`, `"to ensure every methodology is thoroughly covered"`, `"First, this section analyzes... Next, we review... Finally, we highlight"`.
+  - Tiếng Việt: `"mục này tập trung vào ba khía cạnh chính: A, B và C"`, `"để đảm bảo mọi phương pháp đều được đề cập đầy đủ"`.
+  - Khắc phục: Thay vì đứng ngoài thông báo bài báo/bảng biểu sẽ làm gì, hãy viết trực tiếp **luận điểm khoa học thực nghiệm** (Substantive Empirical Insight) phản ánh bản chất đề tài.
 
 ### P2 — Lỗi Văn phong & Nhịp điệu phẳng (Cần hiệu chỉnh để đạt chuẩn người viết)
 - **Độ đồng đều chiều dài câu (`Sentence-Length Uniformity` / $CV < 0.30$)**:
