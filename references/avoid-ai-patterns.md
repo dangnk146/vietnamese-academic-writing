@@ -177,3 +177,16 @@ Người thật (đặc biệt là các nhà nghiên cứu khoa học máy tính
   - Giữ: `DNNs`, `stat-based baselines`, `NLP or ML`, `clinical medical exams` thay vì cố gắng mở rộng thành cụm từ Latinh phồng rộp.
 - ✅ **Xử lý ngoại lệ giản dị**:
   - `Although most studies use statistical analysis, NLP, or ML, we retain descriptive labels for non-computational papers (e.g., clinical medical exams) in the table.`
+
+---
+
+## 7. Bẫy Dấu Hai Chấm Liệt Kê & Câu Cụt Giả Tạo (`ACAD017`)
+
+### 7.1. Bẫy Hai Chấm Liệt Kê (`Colon-into-a-List Trap`)
+- ❌ **Khuôn mẫu máy móc**: `We group these tasks into five areas: abusive chat detection, offender profiling, image screening via facial and age cues, biometric verification in video streams, and file metadata forensics.`
+- ❌ **Số thứ tự trong ngoặc**: `These tasks are categorized into five main areas: (1)..., (2)..., (3)...`
+- ✅ **Khắc phục**: Dùng động từ chỉ phạm vi trực tiếp và liên từ `or` tự nhiên: `These tasks encompass detecting abusive comments or chat logs, profiling offender behavior, screening images through facial or age cues, matching biometric traits in video streams, or parsing filesystem metadata.`
+
+### 7.2. Bẫy Câu Cụt Giả Tạo Ép Chỉ Số CV (`Artificial Staccato Trap`)
+- ❌ **Khuôn mẫu chèn ép**: Đột ngột chèn một câu 4–6 từ lạc lõng giữa các đoạn danh sách dài (`Most papers focus on text.`, `Sharing these collections is rare.`) nhằm mục đích giả lập độ lệch chuẩn chiều dài câu ($CV \ge 0.45$). Các bộ phân loại sâu của QuillBot và Grammarly lập tức gắn cờ câu này vì bước nhảy n-gram xác suất cao sau câu trước.
+- ✅ **Khắc phục**: Lồng ghép quan sát thực nghiệm một cách tự nhiên vào ngữ cảnh số liệu: `Looking at target media, text-based CSAM accounts for 38 papers (74.5%), representing the largest share of research.`

@@ -116,6 +116,10 @@ Khi viết lại bài báo tiếng Anh gốc (`paper/main.tex`) để vừa đ�
 9. **CẤM CHUỐT BÓNG TU TỪ & MỆNH ĐỀ PHÂN TỪ NỐI TIẾP (`Anti-Hyper-Polishing & Participle Chaining` — `ACAD015`)**:
    - ❌ Không dùng các cấu trúc phân từ nối tiếp mà LLM hay lạm dụng: *"..., requiring authors to address..."*, *"..., leaving X as the only option..."*, *"play a defining role here"*, *"In turn, task demands dictate whether..."*.
    - ✅ Khuyến khích **Mẫu Phân Nhóm Khảo Sát Hệ Thống (`ACAD016`)**: Dùng cụm dẫn ý chức năng mộc mạc (*"In terms of datasets, this encompasses..."*, *"For research tasks, it covers..."*) và giữ nguyên các từ viết tắt chuyên ngành tự nhiên (*"DNNs"*, *"stat-based baselines"*, *"clinical medical exams"*).
+10. **CẤM DÙNG DẤU HAI CHẤM ĐỂ LIỆT KÊ & CÂU CỤT GIẢ TẠO (`Anti-Colon-List & Staccato Tell` — `ACAD017`)**:
+   - ❌ Cấm cấu trúc hai chấm liệt kê danh từ song hành: *"categorized into five main areas: (1)..., (2)..."* hoặc *"We group these tasks into five areas: A, B, C, D, and E."*.
+   - ❌ Cấm chèn các câu ngắn giả tạo 4–6 từ cụt lủn chỉ để ép tăng chỉ số CV (*"Most papers focus on text."*, *"Sharing these collections is rare."*), vì các bộ phân loại sâu (QuillBot, Grammarly) phát hiện ngay bước nhảy xác suất n-gram bất thường.
+   - ✅ Diễn đạt tự nhiên bằng động từ chỉ phạm vi (*"These tasks encompass detecting abusive comments, profiling offender behavior, or screening images..."*) và sử dụng liên từ `or` tự nhiên khi liệt kê các phương án trong phân loại học thuật.
 
 ---
 

@@ -31,6 +31,7 @@ RULE_DOCS = {
     "ACAD014": "formulaic meta-discourse or syllabus outline announcement (“our analysis focuses on three components”, “spans three primary categories”, “each entry reports publisher metadata”)",
     "ACAD015": "hyper-polished AI rhetorical transitions or participle chaining (“requiring authors to address”, “in turn, task demands dictate whether”, “leaving X as the only option”)",
     "ACAD016": "survey taxonomy phrasing guidance — encourages functional topic markers (“In terms of datasets”, “For research tasks”) and field-standard technical shorthand (“DNNs”, “stat-based baselines”, “clinical medical exams”)",
+    "ACAD017": "anti-colon-list & artificial staccato tell (flags 'categorized into N areas: A, B, C...', 'including: (1)...' and isolated 4-6 word staccato fillers)",
     "EDU001": "abolished secondary (THCS/THPT) overall grading term (Thông tư 22/2021)",
     "EDU002": "“bạn” addressing a student in a teacher's voice",
     "EDU003": "“cần cải thiện” on a primary report card instead of “cần cố gắng” (Thông tư 27/2020)",
@@ -200,6 +201,17 @@ EN_HYPER_POLISHED_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Colon-into-list structural tell (ACAD017)
+# Strongly flagged by QuillBot, Grammarly, and commercial AI detectors:
+EN_COLON_LIST_RE = re.compile(
+    r"(?:"
+    r"\b(?:categorized|divided|grouped|split|classified)\s+into\s+\w+\s+(?:main\s+)?(?:areas|categories|domains|groups|types|tasks|components)\s*:"
+    r"|\bincluding:\s*\([0-9ivx]+\)"
+    r"|\b(?:focus|focused|focuses)\s+on\s+various\s+aspects\b[^:]{0,50}:"
+    r")",
+    re.IGNORECASE,
+)
+
 # Binomial coordination (`X and Y` or `X or Y`) & Tricolon (`A, B, and C`) detector for English sentences
 TRICOLON_SENT_RE = re.compile(
     r"\b[a-zA-Z-]+(?:\s+[a-zA-Z-]+){0,3},\s+[a-zA-Z-]+(?:\s+[a-zA-Z-]+){0,3},\s+and\s+[a-zA-Z-]+(?:\s+[a-zA-Z-]+){0,3}\b"
@@ -330,6 +342,11 @@ def check_line(ctx, lineno, raw, masked):
             yield ("ACAD015", ERROR, match.start() + 1, match.group(0),
                    f"hyper-polished AI rhetorical transition / participle chaining “{match.group(0)}”",
                    "rewrite hyper-polished LLM rhetorical phrasing (“requiring authors to address”, “in turn, task demands dictate whether”, “play a defining role”) with functional, direct human academic prose")
+
+        for match in EN_COLON_LIST_RE.finditer(masked):
+            yield ("ACAD017", ERROR, match.start() + 1, match.group(0),
+                   f"colon-into-list template “{match.group(0)}”",
+                   "AI detectors strongly flag colons followed by parallel noun lists or numbered items; replace with natural verbs of scope (“These tasks encompass detecting A, profiling B, or screening C”) or descriptive topic sentences")
 
         for match in PROSE_EM_DASH_RE.finditer(masked):
             # Ignore CNN--LSTM / LSTM--CNN or numeric ranges
