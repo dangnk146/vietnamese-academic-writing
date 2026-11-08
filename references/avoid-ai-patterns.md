@@ -155,3 +155,25 @@ Kế thừa và mở rộng từ nghiên cứu thực nghiệm của dự án [`
    - **Câu thân đoạn vừa phải**: 12–18 từ.
      *Ví dụ:* `"Raw Darkweb-CSAM records remain restricted by permission. The public GitHub repository hosts only the source code, excluding all dataset files."* (7 từ & 13 từ).
    $\rightarrow$ Dãy độ dài: `[9, 41, 7, 13]`, $\mu = 17.5$, $\sigma = 13.8$, $CV = 0.79 \gg 0.45$ $\rightarrow$ **Vượt qua 100% mọi bộ lọc AI**.
+
+---
+
+## 6. Mẫu Cú Pháp Siêu Trau Chuốt (Hyper-Polishing Trap) vs. Mẫu Phân Đoạn Chức Năng Của Người Thật (`ACAD015` & `ACAD016`)
+
+### 6.1. Bẫy Siêu Trau Chuốt (`Hyper-Polishing Trap` — `ACAD015`)
+Khi cố gắng tránh từ hoa mỹ, LLM có xu hướng "chuốt bóng" ngữ pháp bằng các cấu trúc nối ý phức tạp có xác suất xuất hiện cực cao (Low Perplexity), khiến AI Detector (Grammarly/QuillBot) gắn cờ 100% AI:
+- ❌ **Mệnh đề phân từ nối tiếp**: `..., requiring authors to address noisy labels...`, `..., leaving X as the only option...`.
+- ❌ **Liên từ tu từ đao to búa lớn**: `In turn, task demands dictate whether...`, `play a defining role here`.
+- ❌ **Cấu trúc đối xứng trừu tượng**: `whether a study employs baseline statistical models, NLP pipelines, or multimodal neural architectures`.
+
+### 6.2. Mẫu Phân Đoạn Chức Năng Của Người Thật (`Survey Taxonomy Pattern` — `ACAD016`)
+Người thật (đặc biệt là các nhà nghiên cứu khoa học máy tính quốc tế) khi phân loại một bảng khảo sát kỹ thuật sử dụng cấu trúc phân đoạn chức năng mộc mạc và thuật ngữ viết tắt chuẩn ngành (High Perplexity):
+- ✅ **Dẫn ý chức năng trực diện**:
+  - `This section groups the [N] selected studies based on their datasets, research tasks, and modeling approaches.`
+  - `In terms of datasets, this encompasses...`
+  - `In terms of research tasks, it mainly covers...`
+  - `For modeling approaches, it covers...`
+- ✅ **Giữ nguyên viết tắt chuyên ngành tự nhiên (Field-Standard Shorthand)**:
+  - Giữ: `DNNs`, `stat-based baselines`, `NLP or ML`, `clinical medical exams` thay vì cố gắng mở rộng thành cụm từ Latinh phồng rộp.
+- ✅ **Xử lý ngoại lệ giản dị**:
+  - `Although most studies use statistical analysis, NLP, or ML, we retain descriptive labels for non-computational papers (e.g., clinical medical exams) in the table.`

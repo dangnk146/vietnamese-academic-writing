@@ -29,6 +29,8 @@ RULE_DOCS = {
     "ACAD012": "Vietnamese AI structural template or buzzword filler (“một cách toàn diện và sâu sắc”, “bức tranh toàn cảnh”, “không đơn thuần là X mà còn Y”)",
     "ACAD013": "coarse, flippant, or overly casual colloquialisms in academic writing (“khử mùi”, “suồng sã”, “sỗ sàng”, “chém gió”, “bóc phốt”, “ngon ăn”, “ăn đứt”)",
     "ACAD014": "formulaic meta-discourse or syllabus outline announcement (“our analysis focuses on three components”, “spans three primary categories”, “each entry reports publisher metadata”)",
+    "ACAD015": "hyper-polished AI rhetorical transitions or participle chaining (“requiring authors to address”, “in turn, task demands dictate whether”, “leaving X as the only option”)",
+    "ACAD016": "survey taxonomy phrasing guidance — encourages functional topic markers (“In terms of datasets”, “For research tasks”) and field-standard technical shorthand (“DNNs”, “stat-based baselines”, “clinical medical exams”)",
     "EDU001": "abolished secondary (THCS/THPT) overall grading term (Thông tư 22/2021)",
     "EDU002": "“bạn” addressing a student in a teacher's voice",
     "EDU003": "“cần cải thiện” on a primary report card instead of “cần cố gắng” (Thông tư 27/2020)",
@@ -184,6 +186,20 @@ EN_META_DISCOURSE_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Hyper-polished AI rhetorical transitions & Participle chaining (ACAD015)
+# Catches low-perplexity LLM stylistic habits that trigger AI text detectors:
+EN_HYPER_POLISHED_RE = re.compile(
+    r"(?:"
+    r"\b(?:requiring\s+(?:authors|researchers|models|practitioners)\s+to\s+(?:address|handle|evaluate|balance))\b"
+    r"|\b(?:leaving\s+[^.?!]{1,60}\s+as\s+the\s+only\s+option)\b"
+    r"|\b(?:in\s+turn,\s*[^.?!]{1,60}\b(?:dictate|determine)s?\s+whether)\b"
+    r"|\b(?:play\s+a\s+(?:defining|pivotal|central|crucial)\s+role\s+here)\b"
+    r"|\b(?:directly\s+affect\s+how\s+researchers\s+formulate)\b"
+    r"|\bliterature\s+centers\s+on\b"
+    r")",
+    re.IGNORECASE,
+)
+
 # Binomial coordination (`X and Y` or `X or Y`) & Tricolon (`A, B, and C`) detector for English sentences
 TRICOLON_SENT_RE = re.compile(
     r"\b[a-zA-Z-]+(?:\s+[a-zA-Z-]+){0,3},\s+[a-zA-Z-]+(?:\s+[a-zA-Z-]+){0,3},\s+and\s+[a-zA-Z-]+(?:\s+[a-zA-Z-]+){0,3}\b"
@@ -309,6 +325,11 @@ def check_line(ctx, lineno, raw, masked):
             yield ("ACAD014", ERROR, match.start() + 1, match.group(0),
                    f"formulaic meta-discourse / syllabus outline announcement “{match.group(0)}”",
                    "replace meta-announcements (“our analysis focuses on three components”, “each entry reports”, “spans three categories”) with substantive domain insights")
+
+        for match in EN_HYPER_POLISHED_RE.finditer(masked):
+            yield ("ACAD015", ERROR, match.start() + 1, match.group(0),
+                   f"hyper-polished AI rhetorical transition / participle chaining “{match.group(0)}”",
+                   "rewrite hyper-polished LLM rhetorical phrasing (“requiring authors to address”, “in turn, task demands dictate whether”, “play a defining role”) with functional, direct human academic prose")
 
         for match in PROSE_EM_DASH_RE.finditer(masked):
             # Ignore CNN--LSTM / LSTM--CNN or numeric ranges

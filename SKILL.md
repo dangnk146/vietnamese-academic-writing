@@ -112,7 +112,10 @@ Khi viết lại bài báo tiếng Anh gốc (`paper/main.tex`) để vừa đ�
    - Luôn lặp lại nhất quán từ khóa hạt nhân đã chốt ở Bước 0 từ đầu đến cuối văn bản.
 8. **CẤM TỰ NHÉT câu mở đầu tường thuật đề cương/mục lục (`Meta-Discourse / Syllabus Outline Tell` — `ACAD014`)**:
    - ❌ Không tự viết: *"Our analysis focuses on three components: A, B, and C"*, *"Each entry reports publisher metadata..."*, *"The breakdown spans three primary categories..."*, *"Mục này tập trung vào ba khía cạnh chính..."*.
-   - ✅ Thay vào đó: Đi thẳng vào **luận điểm khoa học thực nghiệm** (Substantive Empirical Insight) phản ánh bản chất đề tài.
+   - ✅ Thay vào đó: Đi thẳng vào **luận điểm khoa học thực nghiệm** (Substantive Empirical Insight) hoặc dùng cấu trúc phân đoạn chức năng mộc mạc (`ACAD016`).
+9. **CẤM CHUỐT BÓNG TU TỪ & MỆNH ĐỀ PHÂN TỪ NỐI TIẾP (`Anti-Hyper-Polishing & Participle Chaining` — `ACAD015`)**:
+   - ❌ Không dùng các cấu trúc phân từ nối tiếp mà LLM hay lạm dụng: *"..., requiring authors to address..."*, *"..., leaving X as the only option..."*, *"play a defining role here"*, *"In turn, task demands dictate whether..."*.
+   - ✅ Khuyến khích **Mẫu Phân Nhóm Khảo Sát Hệ Thống (`ACAD016`)**: Dùng cụm dẫn ý chức năng mộc mạc (*"In terms of datasets, this encompasses..."*, *"For research tasks, it covers..."*) và giữ nguyên các từ viết tắt chuyên ngành tự nhiên (*"DNNs"*, *"stat-based baselines"*, *"clinical medical exams"*).
 
 ---
 
