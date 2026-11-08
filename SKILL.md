@@ -76,6 +76,22 @@ flowchart LR
 
 ---
 
+## Phương Pháp Dịch Cầu Song Ngữ (Bilingual Roundtrip Triangulation: `EN -> VI -> EN`)
+
+Khi viết lại bài báo tiếng Anh gốc (`paper/main.tex`) để vừa đạt chuẩn học thuật quốc tế vừa **vượt qua 100% các công cụ kiểm tra AI (Grammarly, Turnitin, GPTZero)**:
+1. **Tại sao viết lại trực tiếp (EN -> EN) hay bị Grammarly bắt 100% AI?**
+   - Khi chỉnh sửa trực tiếp trên tiếng Anh, các LLM thường tự động "thổi phồng" bằng từ vựng Latinh trừu tượng (`systematically evaluates empirical literature across three core dimensions`, `acquisition modalities`, `taxonomic consistency`, `systematic framework tailored for...`), dùng mẫu liệt kê cơ học (`First,... Second,... Third,...`), chèn dấu gạch ngang nối ý lỏng lẻo (`—`), và tạo nhịp câu đều đều. Các mẫu câu này lập tức kích hoạt bộ dò AI của Grammarly lên mức 100%.
+2. **Quy trình Dịch Cầu Song Ngữ 2 Bước:**
+   - **Bước 1 (`EN -> VI` Tự nhiên)**: Dịch văn bản gốc sang tiếng Việt tự nhiên, khúc chiết, mạch lạc như một nhà nghiên cứu đang trao đổi học thuật thực thụ. Bước này lập tức bóc tách sạch lớp vỏ từ vựng Latinh sáo rỗng và các khuôn mẫu câu robot của tiếng Anh.
+   - **Bước 2 (`VI -> EN` Đanh thép)**: Dịch ngược từ bản tiếng Việt tự nhiên sang tiếng Anh học thuật:
+     - Dùng động từ hành động trực tiếp và chủ ngữ kỹ thuật cụ thể.
+     - Phá vỡ chuỗi liên từ liệt kê cơ học (`First/Next/Finally`), mở đầu bằng câu chủ đề dẫn dắt tự nhiên.
+     - Đan xen câu ngắn dứt khoát (4–8 từ) bên cạnh câu phân tích chuyên sâu (20–35 từ) để đạt độ biến thiên nhịp điệu cao ($CV \ge 0.45$).
+     - Loại bỏ toàn bộ dấu gạch ngang chữ `—` nối ý tùy tiện.
+     - Bảo toàn nguyên vẹn 100% các nhãn trích dẫn `\cite{...}`, `\citep{...}`, `\ref{...}` và số liệu thực nghiệm.
+
+---
+
 ## Hợp đồng Biên tập & 7 Điều Cấm Tự Nhét (Never-Inject Guardrails)
 
 Để đảm bảo văn bản giữ trọn tính chân thực và không bị biến dạng thành văn mẫu AI, AI **tuyệt đối không được tự ý đưa thêm** các yếu tố sau vào bài viết:

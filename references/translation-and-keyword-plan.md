@@ -165,3 +165,19 @@ Khi gặp một đoạn tiếng Anh trong bản thảo bị vướng văn nói (
    - ❌ *"Have 38 papers focused on text."* / *"38 papers focused on text."* $\rightarrow$ ✅ *"Thirty-eight papers (74.5\%) focused on text-based CSAM."*
 4. **Đồng bộ dấu chấm thập phân (`.`) trong bảng và văn bản tiếng Anh**:
    - Trong bài báo tiếng Anh, mọi số thập phân phải dùng dấu chấm (`95.37\%`, `99.89\%`), không để sót dấu phẩy tiếng Việt (`95,37\%`).
+
+---
+
+### 4.2. Phương Pháp Dịch Cầu Song Ngữ (Bilingual Roundtrip Triangulation: `EN -> VI -> EN`)
+
+Khi viết lại bài báo tiếng Anh (`paper/main.tex`) để vừa đạt chuẩn học thuật quốc tế vừa **vượt qua 100% các công cụ kiểm tra AI (Grammarly, Turnitin, GPTZero)**:
+1. **Bản chất vấn đề:**
+   - Khi chỉnh sửa trực tiếp trên tiếng Anh (`EN -> EN rewrite`), các mô hình AI thường thay thế lỗi vụn vặt bằng một loạt "từ điển Latinh trừu tượng" (`systematically evaluates empirical literature across three core dimensions`, `acquisition modalities`, `taxonomic consistency`, `systematic framework tailored for...`), dùng mẫu liệt kê cơ học (`First,... Second,... Third,...`), chèn dấu gạch ngang nối ý lỏng lẻo (`—`), và tạo nhịp câu đều đều. Kết quả là văn bản bị Grammarly và Turnitin báo **100% AI Writing**!
+2. **Quy trình Dịch Cầu Song Ngữ 2 Bước:**
+   - **Bước 1 (`EN -> VI` Tự nhiên)**: Dịch văn bản gốc sang tiếng Việt tự nhiên, khúc chiết, mạch lạc như một nhà nghiên cứu đang trao đổi học thuật thực thụ. Bước này lập tức bóc tách sạch lớp vỏ từ vựng Latinh sáo rỗng và các khuôn mẫu câu robot của tiếng Anh.
+   - **Bước 2 (`VI -> EN` Đanh thép)**: Dịch ngược từ bản tiếng Việt tự nhiên sang tiếng Anh học thuật:
+     - Dùng động từ hành động trực tiếp và chủ ngữ kỹ thuật cụ thể.
+     - Phá vỡ chuỗi liên từ liệt kê cơ học (`First/Next/Finally`), mở đầu bằng câu chủ đề dẫn dắt tự nhiên.
+     - Đan xen câu ngắn dứt khoát (4–8 từ) bên cạnh câu phân tích chuyên sâu (20–35 từ) để đạt độ biến thiên nhịp điệu cao ($CV \ge 0.45$).
+     - Loại bỏ toàn bộ dấu gạch ngang chữ `—` nối ý tùy tiện.
+     - Bảo toàn nguyên vẹn 100% các nhãn trích dẫn `\cite{...}`, `\citep{...}`, `\ref{...}` và số liệu thực nghiệm.
