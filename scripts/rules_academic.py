@@ -32,6 +32,7 @@ RULE_DOCS = {
     "ACAD015": "hyper-polished AI rhetorical transitions or participle chaining (“requiring authors to address”, “in turn, task demands dictate whether”, “leaving X as the only option”)",
     "ACAD016": "survey taxonomy phrasing guidance — encourages functional topic markers (“In terms of datasets”, “For research tasks”) and field-standard technical shorthand (“DNNs”, “stat-based baselines”, “clinical medical exams”)",
     "ACAD017": "anti-colon-list & artificial staccato tell (flags 'categorized into N areas: A, B, C...', 'including: (1)...' and isolated 4-6 word staccato fillers)",
+    "ACAD018": "RLHF translation bias & low-perplexity syntactic skeleton (flags participial openers/closers like 'Looking at..., ..., representing...', 100% parallel gerund lists 'detecting A, profiling B, screening C', cliché verbs 'breaks down... into', 'stems largely from', 'draws heavily from', and ', while' clause splicing)",
     "EDU001": "abolished secondary (THCS/THPT) overall grading term (Thông tư 22/2021)",
     "EDU002": "“bạn” addressing a student in a teacher's voice",
     "EDU003": "“cần cải thiện” on a primary report card instead of “cần cố gắng” (Thông tư 27/2020)",
@@ -212,6 +213,18 @@ EN_COLON_LIST_RE = re.compile(
     re.IGNORECASE,
 )
 
+# RLHF Translation Bias & Low-Perplexity Syntactic Skeleton (ACAD018)
+# Catches participial openers/closers, 4+ parallel gerund lists, and LLM survey cliché verbs:
+EN_RLHF_SKELETON_RE = re.compile(
+    r"(?:"
+    r"(?:^|[.!?]\s+)(?:Looking\s+at|Turning\s+to|Addressing|Working\s+(?:directly\s+)?in|Taking\s+a\s+\w+\s+view|Evaluating|Similarly\s+examining)\b[^,]{1,40},"
+    r"|,\s*(?:representing\s+the\s+largest\s+share|leaving\s+only|explaining\s+why|leading\s+many\s+authors\s+to|balancing\s+\w+\s+performance|establishing\s+standard)\b"
+    r"|\b(?:stems\s+largely\s+from|draws\s+heavily\s+from|breaks\s+down\s+the\s+research\s+tasks|outlines\s+dataset\s+provenance|dominates\s+the\s+(?:literature|corpus)|pose\s+substantial\s+technical\s+hurdles)\b"
+    r"|\b[a-z]+ing\s+[^,;]{3,35},\s+[a-z]+ing\s+[^,;]{3,35},\s+[a-z]+ing\s+[^,;]{3,35},\s+(?:and\s+|or\s+)?[a-z]+ing\b"
+    r")",
+    re.IGNORECASE,
+)
+
 # Binomial coordination (`X and Y` or `X or Y`) & Tricolon (`A, B, and C`) detector for English sentences
 TRICOLON_SENT_RE = re.compile(
     r"\b[a-zA-Z-]+(?:\s+[a-zA-Z-]+){0,3},\s+[a-zA-Z-]+(?:\s+[a-zA-Z-]+){0,3},\s+and\s+[a-zA-Z-]+(?:\s+[a-zA-Z-]+){0,3}\b"
@@ -347,6 +360,11 @@ def check_line(ctx, lineno, raw, masked):
             yield ("ACAD017", ERROR, match.start() + 1, match.group(0),
                    f"colon-into-list template “{match.group(0)}”",
                    "AI detectors strongly flag colons followed by parallel noun lists or numbered items; replace with natural verbs of scope (“These tasks encompass detecting A, profiling B, or screening C”) or descriptive topic sentences")
+
+        for match in EN_RLHF_SKELETON_RE.finditer(masked):
+            yield ("ACAD018", ERROR, match.start() + 1, match.group(0),
+                   f"RLHF low-perplexity syntactic skeleton “{match.group(0)}”",
+                   "QuillBot/Grammarly neural detectors flag participial bookends ('Looking at..., ..., representing...'), 100% parallel gerund lists, and cliché survey verbs ('stems largely from', 'draws heavily from'); use passive end-placement ('...are presented in Figure X'), mixed POS lists (gerunds + noun phrases), and plain verbs ('has the most research', 'can include')")
 
         for match in PROSE_EM_DASH_RE.finditer(masked):
             # Ignore CNN--LSTM / LSTM--CNN or numeric ranges

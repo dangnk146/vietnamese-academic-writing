@@ -182,11 +182,40 @@ Người thật (đặc biệt là các nhà nghiên cứu khoa học máy tính
 
 ## 7. Bẫy Dấu Hai Chấm Liệt Kê & Câu Cụt Giả Tạo (`ACAD017`)
 
-### 7.1. Bẫy Hai Chấm Liệt Kê (`Colon-into-a-List Trap`)
-- ❌ **Khuôn mẫu máy móc**: `We group these tasks into five areas: abusive chat detection, offender profiling, image screening via facial and age cues, biometric verification in video streams, and file metadata forensics.`
+### 7.1. Bẫy Hai Chấm Liệt Kê Số Cơ Học (`Numbered Colon-List Trap`)
 - ❌ **Số thứ tự trong ngoặc**: `These tasks are categorized into five main areas: (1)..., (2)..., (3)...`
-- ✅ **Khắc phục**: Dùng động từ chỉ phạm vi trực tiếp và liên từ `or` tự nhiên: `These tasks encompass detecting abusive comments or chat logs, profiling offender behavior, screening images through facial or age cues, matching biometric traits in video streams, or parsing filesystem metadata.`
+- ❌ **Khuôn mẫu danh từ trừu tượng song hành**: `We group these tasks into five areas: abusive chat detection, offender profiling, image screening via facial and age cues, biometric verification in video streams, and file metadata forensics.`
 
 ### 7.2. Bẫy Câu Cụt Giả Tạo Ép Chỉ Số CV (`Artificial Staccato Trap`)
 - ❌ **Khuôn mẫu chèn ép**: Đột ngột chèn một câu 4–6 từ lạc lõng giữa các đoạn danh sách dài (`Most papers focus on text.`, `Sharing these collections is rare.`) nhằm mục đích giả lập độ lệch chuẩn chiều dài câu ($CV \ge 0.45$). Các bộ phân loại sâu của QuillBot và Grammarly lập tức gắn cờ câu này vì bước nhảy n-gram xác suất cao sau câu trước.
-- ✅ **Khắc phục**: Lồng ghép quan sát thực nghiệm một cách tự nhiên vào ngữ cảnh số liệu: `Looking at target media, text-based CSAM accounts for 38 papers (74.5%), representing the largest share of research.`
+
+---
+
+## 8. Chiến Lược Chống Thiên Lệch Dịch Thuật RLHF Từ Việt Sang Anh (`VI-to-EN Anti-RLHF Translation Policy` — `ACAD018`)
+
+### 8.1. Nguyên Nhân Gốc Rễ: Tại sao dịch từ Tiếng Việt sang Tiếng Anh lại bị 100% AI?
+Khi dịch một đoạn tiếng Việt học thuật sang tiếng Anh, LLM tự động kích hoạt **Bộ khung cú pháp RLHF xác suất cao nhất (Top-1 Greedy Syntactic Skeleton)**:
+1. **Mệnh đề phân từ đóng khung đầu và cuối câu (`Participial Bookends`)**: Mở đầu bằng `Looking at target media, ...`, `Turning to...,`, `Working in the field, ...` và kết thúc bằng `, representing the largest share of research`, `, leaving only three...`, `, explaining why...`, `, leading many authors to...`.
+2. **Song hành từ loại tuyệt đối 100% trong danh sách (`Rigid POS Parallelism`)**: Ép cả 5 mục trong danh sách đều bắt đầu bằng danh động từ `V-ing` (`detecting..., profiling..., screening..., matching..., parsing...`).
+3. **Động từ khảo sát Cliché của LLM (`Survey Cliché Verbs`)**: Lạm dụng `Figure X breaks down / outlines...`, `dominates the corpus/literature`, `stems largely from`, `draws heavily from`, `centers on`, `poses substantial hurdles`.
+4. **Liên từ tương phản `, while` nối hai vế câu**: Ghép gần như mọi cặp số liệu hoặc tác giả bằng `, while` (`Image analysis accounts for 13.7%, while video examination makes up 5.9%`).
+
+Dù không dùng từ vựng hoa mỹ Tier 1 (`delve`, `tapestry`), bộ phân loại nơ-ron (RoBERTa/DeBERTa của QuillBot & Grammarly) vẫn bắt được **phân phối xác suất chuyển trạng thái cú pháp cực thấp (Low Syntactic Perplexity)** này và báo **100% AI**.
+
+### 8.2. Chính Sách 6 Quy Tắc Cú Pháp Người Thật (Đạt 95%–100% Human)
+1. **Đặt `in Figure~\ref{...}` / `in Table~\ref{...}` ở cuối câu bị động**:
+   - ❌ **100% AI**: `Figure~\ref{fig:pie-chart-tasks-addressed} breaks down the research tasks addressed across the 51 selected studies into five primary domains.`
+   - ✅ **95% Human**: `The analysis of 51 selected studies are presented as a pie chart in Figure~\ref{fig:pie-chart-tasks-addressed}.`
+2. **Phá vỡ tính song hành từ loại tuyệt đối trong danh sách (`Broken POS Parallelism`)**:
+   - ❌ **100% AI (5 V-ing liên tiếp)**: `These tasks encompass detecting abusive comments or chat logs, profiling offender behavior, screening images through facial or age cues, matching biometric traits in video streams, or parsing filesystem metadata.`
+   - ✅ **95% Human (Trộn V-ing với Noun + V-ing)**: `The chosen studies have been shown to be able to perform one of the following tasks: Identifying abusive comments or chat logs, profiling offender behaviors, image screening based on facial or age clues, biometric traits matching in videos, and parsing file system metadata.`
+3. **Xóa sạch Mệnh đề Phân từ Đóng khung (`Zero Participial Bookends`)**:
+   - ❌ **100% AI**: `Looking at target media, text-based CSAM accounts for 38 papers (74.5%), representing the largest share of research.`
+   - ✅ **95% Human**: `Among all the target media, text-based CSAM has the most research (38 papers, 74.5%) and these research tasks can include detecting abusive comments or chat logs.`
+4. **Dùng động từ giản dị chưa nén (`Un-compressed Plain Verbs`)**:
+   - Thay `encompass` -> `have been shown to be able to perform` / `can include`; thay `dominates / accounts for the largest share` -> `has the most research`; thay `stems largely from` -> `is mainly due to`.
+5. **Thay `, while` bằng liên từ `and` trực diện & thêm trạng ngữ tự nhiên**:
+   - ❌ **100% AI**: `Image analysis accounts for 13.7% (7 papers), while video examination or digital filesystem forensics each make up roughly 5.9% (3 papers).`
+   - ✅ **95% Human**: `Image analysis 13.7% (7 papers) and video examination or digital file system forensic each accounts for roughly 5.9% (3 papers) on average.`
+6. **Dùng từ vựng đời thường & tách từ ghép**:
+   - Dùng `facial or age clues` (thay cho `cues`), `in videos` (thay cho `in video streams`), `file system` (2 từ rời thay cho `filesystem`), `based on` (thay cho `via` / `through`).
