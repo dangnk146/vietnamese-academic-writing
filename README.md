@@ -101,12 +101,3 @@ python vietnamese-academic-writing/scripts/validate_copy.py duong_dan/file.tex -
 
 ---
 
-## 5. Cài đặt & Đồng bộ vào Hệ thống Antigravity
-
-Để đồng bộ skill vào cấu hình toàn cục của Antigravity trên Windows:
-
-```powershell
-Copy-Item -Path "d:\1-CNTT-SDH\5-thientb\bai8-suapaper\vietnamese-academic-writing\*" `
-          -Destination "$env:USERPROFILE\.gemini\config\skills\vietnamese-academic-writing" `
-          -Recurse -Force
-```
