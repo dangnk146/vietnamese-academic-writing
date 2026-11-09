@@ -192,6 +192,12 @@ Khi viết lại bài báo tiếng Anh gốc (`paper/main.tex`) để vừa đ�
      - ✅ *các nhà nghiên cứu thường gặp trở ngại tâm lý khi trực tiếp xử lý dạng nội dung này, trong khi giới nghiên cứu tâm lý và xã hội lại có nền tảng chuyên môn phù hợp hơn để tiếp cận dạng dữ liệu này.*
    - Tuân thủ nguyên tắc tôn trọng phân công lao động khoa học: dùng các cụm từ trung tính như **"nền tảng chuyên môn phù hợp hơn"**, **"đặc thù nghiên cứu của lĩnh vực"**, **"thế mạnh chuyên sâu"**.
 
+19. **QUY TẮC TRIỆT TIÊU DẤU VÂN TAY AI & BẢO TỒN BẢN GỐC NGƯỜI THẬT (`Zero-AI Writing Protocols`)**:
+   - **Cấm Formulaic Prepositional Fronting**: Tuyệt đối không mở câu bằng chuỗi trạng ngữ rập khuôn khi dịch từ tiếng Việt (*Regarding data sources... Considering CSAM tasks... Regarding technical methods...*). Bắt buộc đưa thẳng thực thể kỹ thuật (*The datasets*, *CSAM tasks*, *Table 2*) hoặc chủ ngữ chủ động (*We report*, *We group*) lên đầu câu.
+   - **Khai thác Thành ngữ Tự nhiên Perplexity Cao**: Sử dụng các cụm từ học thuật tự nhiên của người bản ngữ như `do not fit neatly into`, `thoroughly covered`, `organized by`, `further classified according to` thay vì từ vựng sáo rỗng máy móc (`comprehensively cover`, `deployed`, `categorized into`).
+   - **Nguyên tắc Bảo tồn Bản gốc Con người (Human Source Preservation)**: Khi một câu tiếng Anh gốc (`col-en`) vốn do con người viết đạt **0% AI**, đúng văn phạm và khớp nghĩa $1:1$ với tiếng Việt, TUYỆT ĐỐI BẢO TỒN NGUYÊN BẢN (Preserve Verbatim), cấm tự ý paraphrase làm tăng điểm AI detector.
+
+
 ## 9 Trụ cột Học thuật Cốt lõi
 
 ### 1. Nguyên tắc "Zero-Superlative" (Tuyệt đối không dùng từ "nhất")

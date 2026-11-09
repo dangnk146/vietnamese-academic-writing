@@ -284,3 +284,32 @@ Dù không dùng từ vựng hoa mỹ Tier 1 (`delve`, `tapestry`), bộ phân l
    - ✅ **95% Human**: `Image analysis 13.7% (7 papers) and video examination or digital file system forensic each accounts for roughly 5.9% (3 papers) on average.`
 6. **Dùng từ vựng đời thường & tách từ ghép**:
    - Dùng `facial or age clues` (thay cho `cues`), `in videos` (thay cho `in video streams`), `file system` (2 từ rời thay cho `filesystem`), `based on` (thay cho `via` / `through`).
+
+---
+
+## 9. Chiến Lược Viết 0% AI Writing & Bảo Tồn Bản Gốc Người Thật (`Zero-AI Writing & Human Source Preservation` — `ACAD019`)
+
+### 9.1. Bẫy Mở Đầu Trạng Ngữ Rập Khuôn (Formulaic Prepositional Fronting Trap)
+- ❌ **Dấu vết AI Writing (AI = 100%)**:
+  > *`Regarding data sources, datasets are categorized into...`*  
+  > *`Considering CSAM tasks, studies are classified according to...`*  
+  > *`Regarding technical methods, we categorize techniques into...`*  
+  > *`For studies not belonging to these groups, we introduce sub-categories to comprehensively cover all investigated methodologies.`*
+- 🔍 **Bản chất lỗi**: Khi dịch các cấu trúc tiếng Việt như *"Về nguồn dữ liệu..."*, *"Xét theo bài toán..."*, *"Về phương pháp kỹ thuật..."*, LLM có phản xạ kích hoạt chuỗi trạng từ xác suất cao `Regarding X... Considering Y... Regarding Z...`. Đây là dấu vân tay hàng đầu khiến AI Detector gắn cờ 100% AI.
+- ✅ **Cách khắc phục chuẩn mực (Đưa thực thể làm chủ ngữ trực tiếp - Direct Subject-Verb)**:
+  > *`The datasets are further classified according to their availability (e.g., public or private) and source...`*  
+  > *`The CSAM tasks are grouped according to the type of media analyzed...`*  
+  > *`We group the applied techniques into three main categories...`*  
+
+### 9.2. Khai Thác Thành Ngữ Tự Nhiên Có Perplexity Cao (High-Perplexity Idioms)
+- ❌ **AI xơ cứng**: `do not belong to these categories`, `comprehensively cover all investigated methodologies`, `deployed approaches`.
+- ✅ **Thành ngữ tự nhiên của người viết bản ngữ**:
+  - **`do not fit neatly into`**: Cụm từ đắt giá nhất để phá vỡ n-gram dự đoán của AI Detector.
+  - **`thoroughly covered`** thay vì `comprehensively covered`.
+  - **`organized by`** / **`grouped according to`** thay vì chuỗi lặp `categorized into`.
+
+### 9.3. Nguyên Tắc Bảo Tồn Bản Gốc Người Thật (Human Source Preservation Rule)
+- Khi một câu tiếng Anh gốc (`col-en` / `paper/main.tex`) vốn dĩ đã do tác giả con người viết đạt **0% AI**, đúng văn phạm và khớp nội dung $1:1$ với tiếng Việt:
+  - **TUYỆT ĐỐI BẢO TỒN NGUYÊN BẢN (Preserve Verbatim)**.
+  - Cấm tùy tiện paraphrase hoặc viết lại câu văn người thật, vì mọi hành động viết lại của LLM đều làm tăng xác suất thống kê (Perplexity thấp) và đẩy điểm AI detector lên cao.
+
