@@ -181,3 +181,28 @@ Khi viết lại bài báo tiếng Anh (`paper/main.tex`) để vừa đạt chu
      - Đan xen câu ngắn dứt khoát (4–8 từ) bên cạnh câu phân tích chuyên sâu (20–35 từ) để đạt độ biến thiên nhịp điệu cao ($CV \ge 0.45$).
      - Loại bỏ toàn bộ dấu gạch ngang chữ `—` nối ý tùy tiện.
      - Bảo toàn nguyên vẹn 100% các nhãn trích dẫn `\cite{...}`, `\citep{...}`, `\ref{...}` và số liệu thực nghiệm.
+
+---
+
+## 5. Nguyên tắc Song ngữ Kỹ thuật & Bảng Chuẩn hóa Thuật ngữ Chuyên ngành (Technical Bilingualism & Domain-Specific Glossary)
+
+### 5.1. Nguyên tắc Song ngữ Kỹ thuật (Technical Bilingualism & No Over-Translation)
+Trong các ngành kỹ thuật như Khoa học Máy tính, Trí tuệ Nhân tạo và An ninh Mạng, cộng đồng nghiên cứu Việt Nam sử dụng song song các thuật ngữ quốc tế chuẩn mực. Việc cố gắng "Việt hóa 100%" từng thuật ngữ quen thuộc sẽ biến văn bản thành ngô nghê, gượng ép và gây cản trở tiếp nhận:
+- **Giữ nguyên thuật ngữ mạng/hệ thống thông dụng**:
+  - Dùng **mạng P2P** (không ép dùng *mạng ngang hàng* khi nói về kênh chia sẻ dữ liệu tội phạm số).
+  - Dùng **darknet** (chuẩn xác hơn *web tối*, vì darknet là các mạng định tuyến ngầm đặc thù như Tor, I2P, Freenet).
+  - Dùng **website** (tự nhiên hơn *trang mạng / trang thông tin điện tử*).
+  - Dùng **sàng lọc title–abstract** (khớp trực tiếp với nhãn biểu đồ PRISMA và metadata bài báo, tránh dịch ngắt quãng).
+
+### 5.2. Chuẩn hóa Thuật ngữ Pháp lý & Điều tra Số Tội phạm (Forensics & Cybercrime)
+- **Hành vi số phạm pháp**:
+  - `create, access, or share CSAM` $\rightarrow$ **tạo lập, truy cập hoặc phát tán CSAM** (chuẩn thuật ngữ tố tụng và điều tra hình sự số; cấm dùng *khởi tạo* [thuật ngữ tiến trình IT], *tiếp cận* [thụ động], *chia sẻ* [lành tính]).
+  - `distribution channels` (trong bối cảnh tội phạm số/CSAM) $\rightarrow$ **kênh phát tán** hoặc **phương thức phát tán** (cấm dùng *kênh phân phối* - vốn là thuật ngữ thương mại logistics).
+- **Phân tách thực thể trong Zeugma (`Identification of abusers and CSAM`)**:
+  - Tách bạch động từ theo đúng thực thể: người phạm tội $\rightarrow$ **xác định thủ phạm / kẻ xâm hại**; tài liệu số $\rightarrow$ **phát hiện tài liệu CSAM**.
+  - Cấm dùng trơ trọi danh từ *đối tượng* mà không có thuộc từ định danh (*đối tượng phạm tội*, *thủ phạm*).
+
+### 5.3. Chuẩn hóa Thuật ngữ Phương pháp luận Tổng quan Hệ thống (PRISMA / SLR)
+- `Search criteria` / `Inclusion criteria` $\rightarrow$ **tiêu chí / tiêu chuẩn tra cứu** (tuyệt đối KHÔNG dùng *mục đích*).
+- `Search pages of digital libraries` $\rightarrow$ **tìm kiếm trên các cơ sở dữ liệu học thuật / thư viện số** (KHÔNG dùng *cổng tìm kiếm* - vốn gợi liên tưởng đến cổng thông tin dịch vụ công).
+- `Downloading (in SLR stage)` $\rightarrow$ **truy xuất dữ liệu ban đầu / trích xuất bản ghi** (nhà nghiên cứu trích xuất metadata/bản ghi thư mục, không dùng từ khẩu ngữ *tải về ban đầu*).

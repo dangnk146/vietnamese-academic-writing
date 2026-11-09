@@ -129,6 +129,22 @@ Khi viết lại bài báo tiếng Anh gốc (`paper/main.tex`) để vừa đ�
 
 ---
 
+12. **NGUYÊN TẮC BẢO TOÀN CÂU GỐC CỦA NGƯỜI VIẾT — CHỈ SỬA ĐÚNG ĐIỂM LỖI (`Surgical Preservation Policy`)**:
+   - **Cấm tuyệt đối viết lại (paraphrase/rewrite) toàn bộ đoạn văn khi bản gốc đã do người viết tự nhiên!** Khi LLM viết lại một câu vốn đã là của con người, LLM sẽ thay thế cấu trúc có độ ngẫu nhiên cao (High Perplexity) của tác giả bằng chuỗi token có xác suất mượt của mô hình, biến đoạn văn Human thành 100% AI.
+   - **Quy trình phân loại 3 mức theo từng câu (Sentence-Level Triage) trước khi sửa**:
+     - **Mức 1 — Câu gốc đã là người viết và phù hợp ngữ cảnh học thuật**: **GIỮ NGUYÊN 100% (Touch Nothing)**. Tuyệt đối không thay từ đồng nghĩa, không đảo cấu trúc câu.
+     - **Mức 2 — Câu gốc là người viết nhưng có lỗi ngữ pháp cục bộ hoặc 1–2 từ dùng sai/AI-ism** (ví dụ: *`which often requests strict access controls`*, *`platforms as Twitter`*, *`built a questionnaire data`*, *`Notably,`*): **CHỈ SỬA ĐÚNG TỪ ĐÓ (Surgical Word Fix)** (đổi `requests` -> `requires`, `as Twitter` -> `such as Twitter`, bỏ `a` trước `data`, xóa `Notably,`), **giữ nguyên 100% các từ còn lại trong câu**.
+     - **Mức 3 — Câu gốc bị vỡ cấu trúc ngữ pháp (Sentence Fragment như `While, \cite{...}`), dùng khẩu ngữ trò chuyện (`And honestly, ...`), hoặc nguyên đoạn gốc bị báo AI 100%**: Chỉ những câu này mới được viết lại, và khi viết lại phải tuân thủ nghiêm ngặt 6 quy tắc `ACAD018`.
+
+13. **QUY TẮC CẤM DẤU GẠCH NGANG EM-DASH (`—`) VÀ KỸ THUẬT PHÂN NHÓM LIỆT KÊ (`Semantic Chunking`)**:
+   - **Cấm tuyệt đối dấu gạch ngang dài `—` giữa câu tiếng Việt**: Mô hình LLM thường sao chép nguyên xi dấu em-dash từ tiếng Anh (`studies—focusing on` -> `hiện có—tập trung vào`), đây là chỉ báo AI 100% kinh điển. Bắt buộc thay thế bằng dấu phẩy và mệnh đề quan hệ (`, trong đó...`, `, đặc biệt...`), cặp dấu phẩy bổ ngữ, hoặc tách câu.
+   - **Chống quá tải dấu phẩy trong câu liệt kê dài (Comma Overload)**: Khi câu liệt kê $\ge 5$ danh từ/yếu tố, không dồn dập bằng một chuỗi dấu phẩy cơ học. Bắt buộc gom nhóm ngữ nghĩa theo tầng bậc logic bằng từ nối (`cùng`, `cũng như`), hoặc tách thành câu độc lập với mệnh đề dẫn dắt (*"Trọng tâm xem xét bao gồm..."*).
+
+14. **NGUYÊN TẮC SONG NGỮ KỸ THUẬT TRONG CNTT & AN NINH MẠNG (`Technical Bilingualism Policy`)**:
+   - **Không ép dịch thô 100% thuật ngữ đã được quốc tế hóa**: Giới nghiên cứu CNTT và An ninh mạng Việt Nam sử dụng trực tiếp các thuật ngữ chuẩn ngành: `mạng P2P`, `darknet`, `website`, `sàng lọc title–abstract`. Việc ép dịch sang Hán-Việt khiên cưỡng (*mạng ngang hàng*, *web tối*, *trang thông tin điện tử*) tạo cảm giác pedantic, xa lạ với người làm nghiên cứu.
+   - **Phân định chính xác thuật ngữ pháp lý / điều tra số vs thương mại / tin học**: Dùng `tạo lập, truy cập hoặc phát tán CSAM` (không dùng *khởi tạo/tiếp cận/chia sẻ*); dùng `kênh phát tán` (không dùng *kênh phân phối*); phân tách động từ theo thực thể trong câu zeugma: `xác định thủ phạm` (người) và `phát hiện tài liệu CSAM` (dữ liệu).
+   - **Cấm từ lai ghép Hán-Việt dị biệt**: Tuyệt đối cấm các từ ngụy tạo tối nghĩa như `điểm duyệt` (thay bằng `hệ thống hóa`, `rà soát`, `tổng quan`).
+
 ## 9 Trụ cột Học thuật Cốt lõi
 
 ### 1. Nguyên tắc "Zero-Superlative" (Tuyệt đối không dùng từ "nhất")

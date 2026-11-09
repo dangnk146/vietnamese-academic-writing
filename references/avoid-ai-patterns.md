@@ -104,6 +104,26 @@ Kế thừa và mở rộng từ nghiên cứu thực nghiệm của dự án [`
 - ✅ **Cách viết chuẩn**:
   > *"Việc phân chia dữ liệu độc lập ở cấp độ bệnh nhân giúp loại bỏ hiện tượng rò rỉ thông tin giữa các lần quét, ngăn ngừa độ chính xác ảo bị thổi phồng so với phân chia ngẫu nhiên."*
 
+### 3.3. Lỗi Lạm dụng Dấu Gạch Ngang Dài Em-dash (—) Giữa Câu
+- ❌ **Dạng AI (Dịch rập khuôn tiếng Anh)**:
+  > *"Mục này trước tiên phân tích các tập dữ liệu được sử dụng trong các công trình hiện có—tập trung vào nguồn gốc, đặc trưng dữ liệu..."*
+  > *"Hệ thống tích hợp hai cảm biến áp lực—một gắn trên thắt lưng và một tích hợp trong đồ lót—nhằm cảnh báo sớm..."*
+- 🔍 **Dấu vết kỹ thuật**:
+  - LLM sao chép nguyên xi cấu trúc nối ý bằng em-dash (`—`) của tiếng Anh. Trong văn phong tiếng Việt học thuật, dấu gạch ngang giữa câu tạo cảm giác đứt gãy, ngoại lai và là dấu hiệu nhận diện AI rõ rệt.
+- ✅ **Cách viết chuẩn học thuật**:
+  - Thay bằng dấu phẩy và mệnh đề quan hệ: `"...trong các công trình hiện có, trong đó tập trung vào nguồn gốc..."`
+  - Thay bằng cặp dấu phẩy bổ ngữ: `"...hai cảm biến áp lực, gồm một cảm biến gắn trên thắt lưng và một tích hợp trong đồ lót, nhằm..."`
+  - Tách thành hai câu độc lập.
+
+### 3.4. Lỗi Quá Tải Dấu Phẩy Khi Liệt Kê (Comma Overload in Long Lists)
+- ❌ **Dạng AI liệt kê cơ học**:
+  > *"tập trung vào nguồn gốc, đặc trưng dữ liệu, các hạn chế kỹ thuật, chất lượng gán nhãn, độ mất cân bằng lớp và những khía cạnh đạo đức liên quan."* (5 dấu phẩy dồn dập).
+- 🔍 **Dấu vết kỹ thuật**:
+  - Liệt kê chuỗi dài $\ge 5$ danh từ chỉ bằng dấu phẩy cơ học, nhịp câu bị vụn vặt và thiếu phân tầng logic.
+- ✅ **Cách khắc phục bằng Phân nhóm Ngữ nghĩa (Semantic Chunking) hoặc Tách câu**:
+  - Gom nhóm: `"...tập trung vào nguồn gốc và đặc trưng dữ liệu, chất lượng gán nhãn cùng độ mất cân bằng lớp, các hạn chế kỹ thuật cũng như những vấn đề đạo đức liên quan."`
+  - Tách câu: `"...trong các công trình hiện có. Trọng tâm xem xét bao gồm nguồn gốc, đặc trưng dữ liệu, chất lượng nhãn, sự mất cân bằng lớp cùng các hạn chế kỹ thuật và vấn đề đạo đức liên quan."`
+
 ---
 
 ## 4. Bảng Tra Cứu Từ Vựng AI 3 Tầng Song Ngữ (Vocabulary Tiers)

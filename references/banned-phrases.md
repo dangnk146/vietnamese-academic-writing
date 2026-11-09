@@ -84,6 +84,10 @@ Văn bản khoa học (đặc biệt là luận văn tiếng Việt) sử dụng
 | `năng lượng giải tích` | `hàm năng lượng không tham số SimAM` / `năng lượng nơ-ron sinh học` | Dịch máy ngô nghê từ *analytical energy function minimization*. |
 | `mô-đun quan hệ không gian SRM` | `mô-đun hiệu chuẩn phong cách đặc trưng SRM` | Nhận diện sai từ viết tắt; SRM là *Style-based Recalibration Module* (Lee et al., ICCV 2019), không phải Spatial Relationship Module. |
 | Lặp công thức 3 dòng cho 3 góc nhìn ($x''_a, x''_c, x''_s$) | Dùng chỉ số đại diện $v \in \{a, c, s\}$: $\tilde{x}_v = \dots$ | Tránh viết lặp công thức vụn vặt gây loãng văn bản và đứt gãy luồng đọc. |
+| `điểm duyệt` | `hệ thống hóa` / `rà soát` / `tổng quan` | Từ lai ghép Hán-Việt tối nghĩa, dị biệt của AI khi dịch từ *review*. |
+| `kênh phân phối` (trong an ninh mạng / CSAM) | `kênh phát tán` / `phương thức phát tán` | "Phân phối" là thuật ngữ thương mại logistics; tội phạm số sử dụng "phát tán/lưu hành". |
+| `cổng tìm kiếm` (khi tra cứu bài báo khoa học) | `tìm kiếm trên cơ sở dữ liệu học thuật` / `giao diện tra cứu` | "Cổng" (portal) mang tính hành chính công; IEEE, ACM, Springer là cơ sở dữ liệu học thuật. |
+| `tải về ban đầu` (trong quy trình SLR/PRISMA) | `truy xuất dữ liệu ban đầu` / `trích xuất bản ghi` | Nhà nghiên cứu trích xuất bibliographic records, không dùng từ khẩu ngữ "tải về". |
 
 ---
 
