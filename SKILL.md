@@ -162,6 +162,13 @@ Khi viết lại bài báo tiếng Anh gốc (`paper/main.tex`) để vừa đ�
    - Khử triệt để lỗi AI đóng ngoặc đơn cơ học cho số liệu thống kê: tích hợp số liệu trực tiếp vào câu văn (*chiếm khoảng 74,5% với 38 bài báo*).
    - Cấm dùng từ khẩu ngữ *Ở Hình X / Ở Bảng X*; dùng **Hình X biểu diễn...** hoặc **Trong Hình X, ...**.
 
+18. **NGUYÊN TẮC TRUNG LẬP LIÊN NGÀNH — KHÔNG SO SÁNH BẰNG CẤP & ĐÀO TẠO CÁ NHÂN (`Interdisciplinary Neutrality Policy`)**:
+   - Khi viết hoặc dịch các nghiên cứu liên ngành (CNTT với Y sinh, Pháp lý, Xã hội học, Tâm lý học, v.v.), **tuyệt đối cấm so sánh đụng chạm đến quá trình đào tạo/học vấn cá nhân** kiểu "chọt thẳng" (*"không được đào tạo bài bản như"*, *"thiếu kỹ năng chuyên môn so với"*).
+   - **Bắt buộc chuyển trọng tâm sang tính tương thích và thế mạnh của nền tảng nghiên cứu**:
+     - ❌ *các chuyên gia công nghệ không được học kỹ năng tâm lý như các nhà xã hội học*
+     - ✅ *các nhà nghiên cứu thường gặp trở ngại tâm lý khi trực tiếp xử lý dạng nội dung này, trong khi giới nghiên cứu tâm lý và xã hội lại có nền tảng chuyên môn phù hợp hơn để tiếp cận dạng dữ liệu này.*
+   - Tuân thủ nguyên tắc tôn trọng phân công lao động khoa học: dùng các cụm từ trung tính như **"nền tảng chuyên môn phù hợp hơn"**, **"đặc thù nghiên cứu của lĩnh vực"**, **"thế mạnh chuyên sâu"**.
+
 ## 9 Trụ cột Học thuật Cốt lõi
 
 ### 1. Nguyên tắc "Zero-Superlative" (Tuyệt đối không dùng từ "nhất")

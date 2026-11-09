@@ -98,6 +98,9 @@ Văn bản khoa học (đặc biệt là luận văn tiếng Việt) sử dụng
 | `nghiêm cấm` (trong văn phong nghiên cứu khoa học) | `các ràng buộc pháp lý` / `hạn chế về mặt pháp lý` | Tránh từ giật gân, mệnh lệnh hành chính; tuân thủ nguyên tắc "Khách quan hóa & Mực thước" (Trụ cột 2). |
 | `chiếm tỷ trọng thấp hơn` (khi nói về bài báo khảo sát) | `ít được chú ý hơn khi chỉ chiếm...` | "Tỷ trọng" là thuật ngữ kinh tế vĩ mô; dùng cách diễn đạt tự nhiên của giới nghiên cứu. |
 | `Ở Hình X` / `Ở Bảng X` | `Trong Hình X` / `Hình X biểu diễn...` | "Ở" là từ khẩu ngữ sinh hoạt đời thường; dùng "Trong" hoặc để Hình/Bảng làm chủ ngữ trực tiếp. |
+| `không được đào tạo bài bản như...` (so sánh liên ngành) | `có nền tảng chuyên môn phù hợp hơn` / `đặc thù chuyên ngành` | Tránh chọt thẳng vào bằng cấp/học vấn cá nhân; tôn trọng phân công lao động khoa học. |
+| `thiếu kỹ năng chuyên môn so với [ngành khác]` | `tận dụng thế mạnh chuyên sâu của [ngành khác]` | Tránh giọng điệu chê bai định kiến học thuật (Educational Elitism). |
+| `ít được học về...` (khi nói về nhà nghiên cứu kỹ thuật) | `chưa có nền tảng nghiên cứu chuyên sâu về...` | Diễn đạt mực thước theo bình diện chuyên môn, không đụng chạm đến quá trình học vấn cá nhân. |
 
 ---
 

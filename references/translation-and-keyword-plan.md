@@ -230,3 +230,10 @@ Trong các ngành kỹ thuật như Khoa học Máy tính, Trí tuệ Nhân tạ
   - $\rightarrow$ **cơ chế kiểm soát quyền tiếp cận cùng sự phê duyệt cấp phép cụ thể** (CẤM dùng *nghiêm ngặt*, *nghiêm cấm*).
 - **Chuẩn hóa diễn đạt "Sensitive and illegal nature"**:
   - $\rightarrow$ **tính nhạy cảm và các ràng buộc pháp lý** (trung tính, khách quan, điềm đạm).
+
+### 5.6. Chuẩn hóa Diễn đạt Tương quan Liên ngành (Interdisciplinary Synergy & Division of Scientific Labor)
+- **Dịch cấu trúc `specifically trained / better equipped [Field A vs Field B]`**:
+  - CẤM dịch thành: *được đào tạo tốt hơn*, *có kỹ năng bài bản hơn [ngành kia]*.
+  - CHUẨN HÓA THÀNH: **có nền tảng chuyên môn phù hợp hơn để tiếp cận / xử lý...** hoặc **tận dụng thế mạnh nghiên cứu chuyên sâu của [lĩnh vực A]**.
+- **Nguyên tắc Khách quan hóa Năng lực Liên ngành**:
+  - Trong các bài báo phối hợp liên ngành (AI + Y tế, AI + Pháp lý, AI + Xã hội học), luôn mô tả mối quan hệ theo hướng **bổ trợ thế mạnh chuyên môn**, tuyệt đối không dùng ngôn ngữ hạ thấp năng lực đào tạo của bất kỳ bên nào.

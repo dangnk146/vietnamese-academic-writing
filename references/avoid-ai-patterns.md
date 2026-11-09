@@ -159,6 +159,16 @@ Kế thừa và mở rộng từ nghiên cứu thực nghiệm của dự án [`
   > *"chia thành năm nhóm:"*
   > *"để bao quát đầy đủ các hướng tiếp cận."*
 
+### 3.9. Lỗi So Sánh Học Vấn & Định Kiến Ngành Nghề Liên Ngành (Disciplinary Training Calque & Educational Elitism)
+- ❌ **Dạng AI dịch máy / tự viết**:
+  > *"Kỹ sư AI không được đào tạo kỹ năng y khoa bài bản như bác sĩ lâm sàng để đọc ảnh X-quang..."*
+  > *"Nhà khoa học máy tính ít được học về tâm lý nên không xử lý được dữ liệu nhạy cảm bằng các nhà xã hội học..."*
+- 🔍 **Dấu vết kỹ thuật**:
+  - LLM dịch thô từ `specifically trained / better equipped` thành so sánh học vấn cá nhân, tạo cảm giác chê bai, chọt thẳng vào bằng cấp/trình độ đào tạo giữa các ngành.
+- ✅ **Cách khắc phục chuẩn mực**: Chuyển thành sự tương thích giữa nền tảng nghiên cứu và đối tượng dữ liệu:
+  > *"Việc đọc ảnh X-quang đòi hỏi nền tảng chuyên môn y khoa sâu sắc của các bác sĩ lâm sàng..."*
+  > *"Các nhà nghiên cứu thường gặp trở ngại tâm lý khi trực tiếp xử lý dạng nội dung này, trong khi giới nghiên cứu tâm lý và xã hội lại có nền tảng chuyên môn phù hợp hơn để tiếp cận dạng dữ liệu này."*
+
 ---
 
 ## 4. Bảng Tra Cứu Từ Vựng AI 3 Tầng Song Ngữ (Vocabulary Tiers)
