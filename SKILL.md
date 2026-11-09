@@ -92,6 +92,29 @@ Khi viết lại bài báo tiếng Anh gốc (`paper/main.tex`) để vừa đ�
 
 ---
 
+## Quy Trình Rà Soát Phẫu Thuật Từng Câu (Surgical Sentence-by-Sentence Review Workflow)
+
+Áp dụng bắt buộc khi rà soát, hiệu đính và hoàn thiện văn bản học thuật song ngữ (đặc biệt trong các tài liệu song ngữ HTML, LaTeX):
+
+1. **Bước 1: Multi-Expert Critical Evaluation & Pushback (Đánh giá đa chuyên gia & Tư duy phản biện)**:
+   - Đánh giá đoạn văn dưới lăng kính 2–3 chuyên gia đầu ngành liên quan trực tiếp đến đề tài (ví dụ: Chuyên gia AI/Khoa học dữ liệu, Chuyên gia An toàn thông tin/Điều tra số tội phạm, Chuyên gia Ngôn ngữ học thuật/Khử AI writing).
+   - Phân tích rõ: Điểm nào hợp lý? Điểm nào tiềm ẩn rủi ro sai lệch ngữ nghĩa, thuật ngữ chuyên ngành hoặc phá vỡ tính toàn vẹn khoa học?
+2. **Bước 2: Sentence-by-Sentence Breakdown & Pushback (Rà soát & Phân loại từng câu)**:
+   - Đối chiếu từng câu giữa văn bản gốc tiếng Anh và bản tiếng Việt.
+   - Phân định rõ ràng hai nhóm:
+     - **NÊN SỬA (hoặc BẮT BUỘC SỬA)**: Chỉ rõ lỗi thuật ngữ (như vi phạm từ cấm *"hệ thống"*, *"tự động"*, *"web tối"*, *"lời thú lộ"*, *"tập dữ liệu"*), lỗi AI-isms (như *"tập dữ liệu tùy biến"*, *"đa dạng các khía cạnh"*), hoặc cấu trúc câu phi logic/dịch máy.
+     - **KHÔNG NÊN SỬA (BẢO TOÀN NGUYÊN VĂN)**: Câu đã chuẩn xác về số liệu thực nghiệm, thuật ngữ và ngữ pháp tự nhiên của người viết thật thì tuyệt đối không viết lại hay can thiệp bừa bãi.
+3. **Bước 3: Text Presentation (Trình bày văn bản tiếng Việt thuần túy)**:
+   - Trình bày toàn văn các đoạn văn hoàn chỉnh dưới dạng văn bản tiếng Việt thuần túy, sạch sẽ (dùng markdown trích dẫn `>`), **tuyệt đối không đưa mã HTML thô (`<div...><p>...`) vào khung chat** làm rối mắt người dùng.
+4. **Bước 4: Task Planning & User Confirmation First (Chờ người dùng xác nhận)**:
+   - Nêu rõ kế hoạch thực hiện (Task Plan) và chờ xác nhận phê duyệt từ người dùng trước khi chạm vào file trên đĩa.
+5. **Bước 5: Surgical Edit on Disk & Read-Back Verification (Can thiệp phẫu thuật & Đọc lại xác thực)**:
+   - Chỉ dùng `edit_file` can thiệp đúng các dòng mục tiêu đã được duyệt.
+   - Tuyệt đối không tự ý sửa tiêu đề (heading) hoặc các đoạn văn xung quanh không được yêu cầu.
+   - Dùng `read_file` đọc lại ngay sau khi sửa để xác thực nội dung đã lưu chính xác trên đĩa.
+
+---
+
 ## Hợp đồng Biên tập & 8 Điều Cấm Tự Nhét (Never-Inject Guardrails)
 
 Để đảm bảo văn bản giữ trọn tính chân thực và không bị biến dạng thành văn mẫu AI, AI **tuyệt đối không được tự ý đưa thêm** các yếu tố sau vào bài viết:
