@@ -219,3 +219,14 @@ Trong các ngành kỹ thuật như Khoa học Máy tính, Trí tuệ Nhân tạ
   - `availability (public or private)` $\rightarrow$ **dạng công khai hoặc đóng / quyền truy cập (công khai hay bảo mật)**. CẤM TUYỆT ĐỐI dịch thành *tính khả dụng* (sai lệch sang usability).
 - **Thuật ngữ "We report" trong nghiên cứu tổng quan / khảo sát (Survey/SLR)**:
   - `For each paper, we report [X, Y, Z]` $\rightarrow$ **thống kê / tổng hợp chi tiết [X, Y, Z]**. CẤM dùng *ghi nhận* (lệch sắc thái phương pháp luận).
+
+### 5.5. Chuẩn hóa Thuật ngữ Sinh trắc học, Thị giác Máy tính & Pháp y Số
+- **Từ "Matching" trong Biometrics / Vision bắt buộc dịch là "SO KHỚP"**:
+  - `biometric matching` $\rightarrow$ **so khớp sinh trắc học** (CẤM TUYỆT ĐỐI dùng *đối khớp*).
+  - `detection and matching` $\rightarrow$ **phát hiện và so khớp**.
+- **Giữ nguyên thuật ngữ tiếng Anh `digital file traces`**:
+  - Tuân thủ nguyên tắc Song ngữ Kỹ thuật, không ép dịch thô thành *dấu vết tệp số*.
+- **Chuẩn hóa diễn đạt "Strict access controls & specific legal permissions"**:
+  - $\rightarrow$ **cơ chế kiểm soát quyền tiếp cận cùng sự phê duyệt cấp phép cụ thể** (CẤM dùng *nghiêm ngặt*, *nghiêm cấm*).
+- **Chuẩn hóa diễn đạt "Sensitive and illegal nature"**:
+  - $\rightarrow$ **tính nhạy cảm và các ràng buộc pháp lý** (trung tính, khách quan, điềm đạm).

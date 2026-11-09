@@ -155,6 +155,13 @@ Khi viết lại bài báo tiếng Anh gốc (`paper/main.tex`) để vừa đ�
    - Tuyệt đối không tự ý chèn chữ "hệ thống" trước các danh từ khoa học khi nguyên tác tiếng Anh không có chữ *system* (`a classification` $\rightarrow$ `kết quả phân loại`, CẤM: *hệ thống phân loại*).
    - Tránh lỗi chập trạng ngữ - mất chủ ngữ khi dẫn nhập bảng biểu (*"Ở Bảng 2 cung cấp..."*); bắt buộc dùng cấu trúc chuẩn mực: *"Trong Bảng 2, [kết quả phân loại / thông tin...] được trình bày theo..."*.
 
+17. **CHUẨN HÓA THUẬT NGỮ SINH TRẮC HỌC, PHÁP Y SỐ & KHỬ LỖI NGOẶC ĐƠN SỐ LIỆU**:
+   - `matching` trong sinh trắc học và thị giác máy tính bắt buộc dịch là **"so khớp"** (CẤM: *đối khớp*).
+   - Giữ nguyên thuật ngữ tiếng Anh **`digital file traces`** theo nguyên tắc Song ngữ Kỹ thuật.
+   - Tuân thủ Trụ cột 2 (Khách quan hóa & Mực thước): Cấm dùng từ giật gân *nghiêm cấm*, cấm lạm dụng từ khuôn sáo *nghiêm ngặt*; thay bằng **ràng buộc pháp lý** và **kiểm soát quyền tiếp cận**.
+   - Khử triệt để lỗi AI đóng ngoặc đơn cơ học cho số liệu thống kê: tích hợp số liệu trực tiếp vào câu văn (*chiếm khoảng 74,5% với 38 bài báo*).
+   - Cấm dùng từ khẩu ngữ *Ở Hình X / Ở Bảng X*; dùng **Hình X biểu diễn...** hoặc **Trong Hình X, ...**.
+
 ## 9 Trụ cột Học thuật Cốt lõi
 
 ### 1. Nguyên tắc "Zero-Superlative" (Tuyệt đối không dùng từ "nhất")

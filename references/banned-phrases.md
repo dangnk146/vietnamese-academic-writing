@@ -92,6 +92,12 @@ Văn bản khoa học (đặc biệt là luận văn tiếng Việt) sử dụng
 | `hệ thống phân loại` (khi gốc là *a classification*) | `kết quả phân loại` / `bản phân loại` | Tự ý đệm chữ "hệ thống" đao to búa lớn khi tiếng Anh không có chữ *system*. |
 | `tính khả dụng` (khi nói về dataset) | `khả năng tiếp cận` / `dataset công khai hay đóng` | Dịch sai từ *availability*; "tính khả dụng" là usability (độ dễ dùng phần mềm). |
 | `ghi nhận` (khi nói về việc đưa thông số bài báo vào bảng khảo sát) | `thống kê` / `tổng hợp` / `trích xuất` | "Ghi nhận" dùng cho ghi nhận công lao hoặc ca bệnh; khảo sát bài báo là hành vi thống kê dữ liệu thư mục. |
+| `đối khớp` (trong sinh trắc học / thị giác máy tính) | `so khớp` / `nhận diện và so khớp` | Thuật ngữ chuẩn của biometric/pattern matching là "so khớp"; "đối khớp" mang nghĩa phẫu thuật nắn xương. |
+| `dấu vết tệp số` (trong an ninh mạng / forensic) | `digital file traces` | Thuật ngữ kỹ thuật đặc thù, giữ nguyên tiếng Anh theo chuẩn Song ngữ Kỹ thuật. |
+| `nghiêm ngặt` (khi lạm dụng cho access control) | `chặt chẽ` / `kiểm soát quyền tiếp cận` / bỏ tính từ thừa | Tránh lạm dụng từ khuôn sáo của AI; "kiểm soát quyền tiếp cận" tự thân đã mang nghĩa hạn chế bảo vệ. |
+| `nghiêm cấm` (trong văn phong nghiên cứu khoa học) | `các ràng buộc pháp lý` / `hạn chế về mặt pháp lý` | Tránh từ giật gân, mệnh lệnh hành chính; tuân thủ nguyên tắc "Khách quan hóa & Mực thước" (Trụ cột 2). |
+| `chiếm tỷ trọng thấp hơn` (khi nói về bài báo khảo sát) | `ít được chú ý hơn khi chỉ chiếm...` | "Tỷ trọng" là thuật ngữ kinh tế vĩ mô; dùng cách diễn đạt tự nhiên của giới nghiên cứu. |
+| `Ở Hình X` / `Ở Bảng X` | `Trong Hình X` / `Hình X biểu diễn...` | "Ở" là từ khẩu ngữ sinh hoạt đời thường; dùng "Trong" hoặc để Hình/Bảng làm chủ ngữ trực tiếp. |
 
 ---
 

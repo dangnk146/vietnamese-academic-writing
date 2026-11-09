@@ -141,6 +141,24 @@ Kế thừa và mở rộng từ nghiên cứu thực nghiệm của dự án [`
 - ✅ **Cách khắc phục**: Gom tính từ sau một danh từ duy nhất:
   - *"phân loại thành các dataset công khai hoặc đóng"*
 
+### 3.7. Lỗi Đóng Ngoặc Đơn Số Liệu Thống Kê Cơ Học (Parenthetical Stat Packing & Mechanical Parallelism)
+- ❌ **Dạng AI sinh ra**:
+  > *"Đa số các nghiên cứu (khoảng 74,5%, tương đương 38 bài báo) tập trung... tiếp theo là video và digital file traces với tỷ lệ tương đương nhau (khoảng 5,9%)."*
+- 🔍 **Dấu vết kỹ thuật**:
+  - LLM máy móc đóng mở ngoặc đơn `(...)` cho mọi số liệu thống kê và lặp công thức sáo rỗng `với tỷ lệ tương đương nhau (khoảng X%)`.
+- ✅ **Cách viết chuẩn người thật**: Tích hợp số liệu trực tiếp vào dòng văn mộc mạc:
+  > *"Đa số các nghiên cứu tập trung phân tích CSAM dạng văn bản, chiếm khoảng 74,5% với 38 bài báo. Ngược lại, CSAM dạng hình ảnh ít được chú ý hơn khi chỉ chiếm khoảng 13,7%, tiếp đến là CSAM dạng video và digital file traces, mỗi nhóm chiếm 5,9% với 3 bài báo."*
+
+### 3.8. Lỗi Tự Nhét Từ Tăng Cấp Độ và Phân Định Giả Tạo (Superfluous Modifiers & False Absolutes)
+- ❌ **Dạng AI**:
+  > *"chia thành năm nhóm chính:"* (trong khi biểu đồ chỉ có đúng 5 nhóm, không có nhóm phụ).
+  > *"nhằm bao quát toàn diện mọi phương pháp."* (dùng từ "mọi" tuyệt đối hóa).
+- 🔍 **Dấu vết kỹ thuật**:
+  - AI tự chèn chữ "chính" (`main`) và từ tuyệt đối "mọi" (`every`) tạo cảm giác đao to búa lớn.
+- ✅ **Cách khắc phục**:
+  > *"chia thành năm nhóm:"*
+  > *"để bao quát đầy đủ các hướng tiếp cận."*
+
 ---
 
 ## 4. Bảng Tra Cứu Từ Vựng AI 3 Tầng Song Ngữ (Vocabulary Tiers)
