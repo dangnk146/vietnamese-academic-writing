@@ -206,3 +206,16 @@ Trong các ngành kỹ thuật như Khoa học Máy tính, Trí tuệ Nhân tạ
 - `Search criteria` / `Inclusion criteria` $\rightarrow$ **tiêu chí / tiêu chuẩn tra cứu** (tuyệt đối KHÔNG dùng *mục đích*).
 - `Search pages of digital libraries` $\rightarrow$ **tìm kiếm trên các cơ sở dữ liệu học thuật / thư viện số** (KHÔNG dùng *cổng tìm kiếm* - vốn gợi liên tưởng đến cổng thông tin dịch vụ công).
 - `Downloading (in SLR stage)` $\rightarrow$ **truy xuất dữ liệu ban đầu / trích xuất bản ghi** (nhà nghiên cứu trích xuất metadata/bản ghi thư mục, không dùng từ khẩu ngữ *tải về ban đầu*).
+
+### 5.4. Chuẩn hóa Thuật ngữ AI/Machine Learning & Khoa học Dữ liệu
+- **Từ "Task" bắt buộc dịch là "BÀI TOÁN"**:
+  - `tasks addressed` $\rightarrow$ **các bài toán được giải quyết / bài toán nghiên cứu**.
+  - `CSAM tasks` $\rightarrow$ **các bài toán nghiên cứu về CSAM / bài toán phát hiện CSAM** (CẤM TUYỆT ĐỐI dịch thành *nhiệm vụ CSAM* vì tài liệu không có nhiệm vụ).
+  - `classification task` $\rightarrow$ **bài toán phân loại**; `detection task` $\rightarrow$ **bài toán phát hiện**.
+- **Phân biệt `Data` vs `Dataset` & Giữ nguyên từ khóa kỹ thuật `Dataset`**:
+  - Dùng **dataset** để chỉ bộ dữ liệu cụ thể có cấu trúc, tránh nhầm với `data` (dữ liệu thô nói chung).
+  - **Quy tắc chống lặp từ kép**: Dùng 1 danh từ `dataset` duy nhất đi kèm cặp tính từ: **dataset công khai hoặc đóng** (CẤM: *dataset công khai hoặc dataset đóng*).
+- **Thuật ngữ "Dataset Availability"**:
+  - `availability (public or private)` $\rightarrow$ **dạng công khai hoặc đóng / quyền truy cập (công khai hay bảo mật)**. CẤM TUYỆT ĐỐI dịch thành *tính khả dụng* (sai lệch sang usability).
+- **Thuật ngữ "We report" trong nghiên cứu tổng quan / khảo sát (Survey/SLR)**:
+  - `For each paper, we report [X, Y, Z]` $\rightarrow$ **thống kê / tổng hợp chi tiết [X, Y, Z]**. CẤM dùng *ghi nhận* (lệch sắc thái phương pháp luận).

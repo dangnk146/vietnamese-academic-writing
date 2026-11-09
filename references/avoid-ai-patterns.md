@@ -124,6 +124,23 @@ Kế thừa và mở rộng từ nghiên cứu thực nghiệm của dự án [`
   - Gom nhóm: `"...tập trung vào nguồn gốc và đặc trưng dữ liệu, chất lượng gán nhãn cùng độ mất cân bằng lớp, các hạn chế kỹ thuật cũng như những vấn đề đạo đức liên quan."`
   - Tách câu: `"...trong các công trình hiện có. Trọng tâm xem xét bao gồm nguồn gốc, đặc trưng dữ liệu, chất lượng nhãn, sự mất cân bằng lớp cùng các hạn chế kỹ thuật và vấn đề đạo đức liên quan."`
 
+### 3.5. Lỗi Tự Ý Đệm Từ "Hệ Thống" Đao To Búa Lớn (System-Padding Calque)
+- ❌ **Dạng AI đệm từ**:
+  > *"Bảng 2 cung cấp hệ thống phân loại 51 nghiên cứu..."* (Gốc chỉ là: *provides a classification*).
+  > *"thông qua hệ thống tìm kiếm của bốn thư viện số..."* (Gốc chỉ là: *through search pages*).
+- 🔍 **Dấu vết kỹ thuật**:
+  - LLM có xu hướng tự động chèn chữ "hệ thống" vào mọi danh từ để tạo cảm giác trang trọng giả tạo.
+- ✅ **Cách khắc phục**: Xóa bỏ chữ "hệ thống" nếu nguyên tác tiếng Anh không có chữ *system*:
+  - *"Trong Bảng 2, kết quả phân loại 51 nghiên cứu gần đây được trình bày..."*
+
+### 3.6. Lỗi Lặp Từ Kép Trong Cặp Tính Từ Song Hành (Tautological Doubling)
+- ❌ **Dạng AI lặp từ**:
+  > *"phân loại thành dataset công khai hoặc dataset đóng"*
+- 🔍 **Dấu vết kỹ thuật**:
+  - Lặp lại danh từ kỹ thuật hai lần liên tiếp trong một cụm song hành.
+- ✅ **Cách khắc phục**: Gom tính từ sau một danh từ duy nhất:
+  - *"phân loại thành các dataset công khai hoặc đóng"*
+
 ---
 
 ## 4. Bảng Tra Cứu Từ Vựng AI 3 Tầng Song Ngữ (Vocabulary Tiers)

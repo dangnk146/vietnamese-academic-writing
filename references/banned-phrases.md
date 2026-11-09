@@ -88,6 +88,10 @@ Văn bản khoa học (đặc biệt là luận văn tiếng Việt) sử dụng
 | `kênh phân phối` (trong an ninh mạng / CSAM) | `kênh phát tán` / `phương thức phát tán` | "Phân phối" là thuật ngữ thương mại logistics; tội phạm số sử dụng "phát tán/lưu hành". |
 | `cổng tìm kiếm` (khi tra cứu bài báo khoa học) | `tìm kiếm trên cơ sở dữ liệu học thuật` / `giao diện tra cứu` | "Cổng" (portal) mang tính hành chính công; IEEE, ACM, Springer là cơ sở dữ liệu học thuật. |
 | `tải về ban đầu` (trong quy trình SLR/PRISMA) | `truy xuất dữ liệu ban đầu` / `trích xuất bản ghi` | Nhà nghiên cứu trích xuất bibliographic records, không dùng từ khẩu ngữ "tải về". |
+| `nhiệm vụ CSAM` / dịch `task` trong AI thành `nhiệm vụ` | `bài toán nghiên cứu về CSAM` / `bài toán` | Trong AI/ML, task là "bài toán" kỹ thuật; CSAM là tài liệu, không thể có "nhiệm vụ". |
+| `hệ thống phân loại` (khi gốc là *a classification*) | `kết quả phân loại` / `bản phân loại` | Tự ý đệm chữ "hệ thống" đao to búa lớn khi tiếng Anh không có chữ *system*. |
+| `tính khả dụng` (khi nói về dataset) | `khả năng tiếp cận` / `dataset công khai hay đóng` | Dịch sai từ *availability*; "tính khả dụng" là usability (độ dễ dùng phần mềm). |
+| `ghi nhận` (khi nói về việc đưa thông số bài báo vào bảng khảo sát) | `thống kê` / `tổng hợp` / `trích xuất` | "Ghi nhận" dùng cho ghi nhận công lao hoặc ca bệnh; khảo sát bài báo là hành vi thống kê dữ liệu thư mục. |
 
 ---
 

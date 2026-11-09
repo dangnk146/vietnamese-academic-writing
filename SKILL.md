@@ -145,6 +145,16 @@ Khi viết lại bài báo tiếng Anh gốc (`paper/main.tex`) để vừa đ�
    - **Phân định chính xác thuật ngữ pháp lý / điều tra số vs thương mại / tin học**: Dùng `tạo lập, truy cập hoặc phát tán CSAM` (không dùng *khởi tạo/tiếp cận/chia sẻ*); dùng `kênh phát tán` (không dùng *kênh phân phối*); phân tách động từ theo thực thể trong câu zeugma: `xác định thủ phạm` (người) và `phát hiện tài liệu CSAM` (dữ liệu).
    - **Cấm từ lai ghép Hán-Việt dị biệt**: Tuyệt đối cấm các từ ngụy tạo tối nghĩa như `điểm duyệt` (thay bằng `hệ thống hóa`, `rà soát`, `tổng quan`).
 
+15. **CHUẨN HÓA THUẬT NGỮ AI/ML: "TASK" LÀ "BÀI TOÁN", GIỮ NGUYÊN "DATASET", CẤM "TÍNH KHẢ DỤNG"**:
+   - `task` trong AI/ML/Data Science bắt buộc dịch là **"bài toán"** (ví dụ: `bài toán nghiên cứu về CSAM`, `bài toán phân loại`), CẤM dịch thành *nhiệm vụ*.
+   - Giữ nguyên từ mượn **`dataset`** trong ngữ cảnh kỹ thuật; áp dụng quy tắc chống lặp từ kép (*các dataset công khai hoặc đóng*, CẤM *dataset công khai hoặc dataset đóng*).
+   - `dataset availability` dịch là **quyền truy cập / khả năng tiếp cận / dataset công khai hay đóng**; CẤM TUYỆT ĐỐI dịch thành *tính khả dụng* (usability).
+   - `we report` trong nghiên cứu khảo sát/tổng quan (Survey/SLR) dịch là **"thống kê / tổng hợp chi tiết"** (không dịch thành *ghi nhận*).
+
+16. **CẤM ĐỆM TỪ "HỆ THỐNG" ĐAO TO BÚA LỚN (`System-Padding Calque`) & CHUẨN CÚ PHÁP DẪN NHẬP BẢNG BIỂU**:
+   - Tuyệt đối không tự ý chèn chữ "hệ thống" trước các danh từ khoa học khi nguyên tác tiếng Anh không có chữ *system* (`a classification` $\rightarrow$ `kết quả phân loại`, CẤM: *hệ thống phân loại*).
+   - Tránh lỗi chập trạng ngữ - mất chủ ngữ khi dẫn nhập bảng biểu (*"Ở Bảng 2 cung cấp..."*); bắt buộc dùng cấu trúc chuẩn mực: *"Trong Bảng 2, [kết quả phân loại / thông tin...] được trình bày theo..."*.
+
 ## 9 Trụ cột Học thuật Cốt lõi
 
 ### 1. Nguyên tắc "Zero-Superlative" (Tuyệt đối không dùng từ "nhất")
